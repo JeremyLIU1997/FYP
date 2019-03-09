@@ -1,4 +1,0 @@
-Training Setup: 
-M: 784
-R: 50
-N: 1000

@@ -37,15 +37,15 @@ RATE_MATRIX = np.array(
 )
 
 nmf_model = NMF(n_components=2)  # 设有2个主题
-item_dis = nmf_model.fit_transform(RATE_MATRIX)
-user_dis = nmf_model.components_
-print(nmf_model.reconstruction_err_)
+item_dis = nmf_model.fit_transform(RATE_MATRIX) # 10 by 2
+user_dis = nmf_model.components_                # 2 by 15
+print("Reconstruction err: "+ str(nmf_model.reconstruction_err_))
 
 rec_mat = np.dot(item_dis, user_dis)
+print("Rate - rec:")
 filter_matrix = RATE_MATRIX < 1e-8
 print('重建矩阵，并过滤掉已经评分的物品：')
-rec_filter_mat = (filter_matrix * rec_mat).T
-print(rec_filter_mat)
+rec_filter_mat = (filter_matrix * rec_mat).T # 15 by 10
 
 rec_user = '凛冬将至'  # 需要进行推荐的用户
 rec_userid = user.index(rec_user)  # 推荐用户ID

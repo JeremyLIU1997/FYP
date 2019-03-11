@@ -148,7 +148,7 @@ def saveFigFunc(title):
 
 
 # clear last log first
-os.system("rm -r /Users/LeLe/PycharmProjects/NMF/figures/*")
+# os.system("rm -r /Users/LeLe/PycharmProjects/NMF/figures/*")
 
 # training
 n_iter = 1000
@@ -158,9 +158,9 @@ try:
     for i in range(n_iter):
         print("Iteration #" + str(i + 1))
         # what happens when divided by zero?
-        H = H * (divideSkipZero(np.dot(W.T, divideSkipZero(V, np.dot(W, H))), np.dot(W.T, one)))
-        W = W * (divideSkipZero(np.dot(divideSkipZero(V, np.dot(W, H)), H.T), np.dot(one, H.T)))
-        temp = np.dot(W, H)
+        H = H * (divideSkipZero(np.matmul(W.T, divideSkipZero(V, np.matmul(W, H))), np.matmul(W.T, one)))
+        W = W * (divideSkipZero(np.matmul(divideSkipZero(V, np.matmul(W, H)), H.T), np.matmul(one, H.T)))
+        temp = np.matmul(W, H)
         print(euclidean(V, temp))
         # show_bases(W, title=" Iteration " + str(i + 1), max_images=R)
 except KeyboardInterrupt:

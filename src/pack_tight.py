@@ -18,14 +18,14 @@ from tqdm import tqdm
 # sizes of datasets
 movie_index = 0
 users = []
-number_of_movies_chosen = 80
+number_of_movies_chosen = 30
 output_file = "../Data/netflix_data/my_data_" + str(number_of_movies_chosen) + ".txt"
 
 ################################################################
 with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
 	for line in tqdm(f):
 		if line[-2] == ":":
-			if movie_index == number_of_movies_chosen:
+			if movie_index == number_of_movies_chosen + 1:
 				break;
 			movie_index += 1
 			continue
@@ -43,11 +43,10 @@ with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
 	with open(output_file, "w+") as output:
 			for line in tqdm(f):
 				if line[-2] == ":":
-					if int(line.split(":")[0]) == number_of_movies_chosen:
+					if int(line.split(":")[0]) == number_of_movies_chosen + 1:
 						break;
 					output.write(line)
 					continue
 				split = line.split(",")
-				print("Key: " + str(split[0]))
 				output.write(str(id_map_dict[int(split[0])]) + "," + split[1] + "\n")
 

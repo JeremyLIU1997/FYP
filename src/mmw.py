@@ -24,10 +24,13 @@ def matrix_factorization(R, P, Q, K, steps=5000, alpha=0.0002, beta=0.02):
     @OUTPUT:
         the final matrices P and Q
     """
-    no_nonzero = np.count_nonzero(mat)
+    no_nonzero = np.count_nonzero(R)
     err = 0
     Q = Q.T
+    last_err = 0
+    err = 0
     for step in range(steps):
+        print("Iteration #" + str(step+1) + ": ", end="")
         for i in range(len(R)):
             for j in range(len(R[i])):
                 if R[i][j] > 0:
@@ -43,9 +46,11 @@ def matrix_factorization(R, P, Q, K, steps=5000, alpha=0.0002, beta=0.02):
                     e = e + pow(R[i][j] - np.dot(P[i,:],Q[:,j]), 2)
                     for k in range(K):
                         e = e + (beta/2) * ( pow(P[i][k],2) + pow(Q[k][j],2) )
-        print("**********!@")
-        print("Iteration #" + str(step) + ": " + str(euclidean_exclude_zero(R, np.matmul(P,Q.T)) / no_nonzero))
-        print("Iteration #" + str(step) + ": " + str(euclidean_exclude_zero(R, np.matmul(P,Q.T))))
+        last_err = err
+        recons = np.matmul(P,Q)
+        err = euclidean_exclude_zero(R, recons) / no_nonzero
+        print(str(err) + " (%" + str(100 * err/last_err) + ")")
+        print(recons)
         """
                 if e < 0.001:
             break
@@ -66,7 +71,7 @@ if __name__ == "__main__":
 
     R = np.array(R)
     input = "../Data/netflix_data/my_data_30.txt"
-    R = load(input)
+    # R = load(input)
     N = len(R)
     M = len(R[0])
     K = 2
@@ -75,6 +80,7 @@ if __name__ == "__main__":
     Q = np.random.rand(M,K)
 
     print('Simple matrix factorization')
+    print("###############################")
     P, Q = matrix_factorization(R, P, Q, K)
     print(P)
     print(Q)

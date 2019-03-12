@@ -16,7 +16,7 @@ np.set_printoptions(threshold=np.nan)
 def euclidean(a, b):
 	return np.linalg.norm(a - b) ** 2
 
-def euclidean_exlucde_zero(a,b):
+def euclidean_exclude_zero(a,b):
 	err = 0
 	for i in range(len(a)):
 		for j in range(len(a[i])):
@@ -80,41 +80,43 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 		last_err = current_err
 		recons = np.matmul(U,M)
 		temprecons = recons
-		current_err = euclidean_exlucde_zero(mat, recons) / no_nonzero
+		current_err = euclidean_exclude_zero(mat, recons) / no_nonzero
 		# print("U: \n" + str(U))
 		# print("M: \n" + str(M))
 		# print("recons: \n" + str(recons))
 		print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
 		
 
-# adjustable parameters
-input = "../Data/netflix_data/my_data_30.txt"
-Nf = 2
-N_iter = 5000
-#========================================================
-# CAUTION: be extremely careful when printing a very large
-# array. Tried printing a 191M array, job freezes for minutes
-# with that particular process occupying 100% of allocated
-# CPU time
-# ****** print(data) ******
-print("Loading data...")
-#R = load(input)
-# R = np.random.rand(1000,200).astype(float)
-# R = np.array([[1,3,3,5,3],[4,2,3,3,1],[5,1,5,3,2],[4,2,3,2,4]])
-R = load(input)
-# R = np.array([[5,3,0,1],[4,0,0,1],[1,1,0,5],[1,0,0,4],[0,1,5,4],[5,3,0,0]])
+if __name__ == '__main__':
+	
+	# adjustable parameters
+	input = "../Data/netflix_data/my_data_30.txt"
+	Nf = 2
+	N_iter = 5000
+	#========================================================
+	# CAUTION: be extremely careful when printing a very large
+	# array. Tried printing a 191M array, job freezes for minutes
+	# with that particular process occupying 100% of allocated
+	# CPU time
+	# ****** print(data) ******
+	print("Loading data...")
+	#R = load(input)
+	# R = np.random.rand(1000,200).astype(float)
+	# R = np.array([[1,3,3,5,3],[4,2,3,3,1],[5,1,5,3,2],[4,2,3,2,4]])
+	# R = load(input)
+	R = np.array([[5,3,0,1],[4,0,0,1],[1,1,0,5],[1,0,0,4],[0,1,5,4],[5,3,0,0]])
 
-print("R.shape: " + str(R.shape))
+	print("R.shape: " + str(R.shape))
 
-model = NMF(n_components=Nf)
-print("Factorizing...")
-print("Nf = " + str(Nf))
+	model = NMF(n_components=Nf)
+	print("Factorizing...")
+	print("Nf = " + str(Nf))
 
 
-try:
-	als_fit(R)
-except KeyboardInterrupt:
-	save(tempU, "../Model/user.txt")
-	save(tempM, "../Model/item.txt")
-	save(temprecons, "../Model/recons.txt")
-	exit(0)
+	try:
+		als_fit(R)
+	except KeyboardInterrupt:
+		save(tempU, "../Model/user.txt")
+		save(tempM, "../Model/item.txt")
+		save(temprecons, "../Model/recons.txt")
+		exit(0)

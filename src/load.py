@@ -36,7 +36,7 @@ def load(input):
 				continue
 			split = line.split(",")
 			R[int(split[0])][current_movie - 1] = int(split[1])
-	return R
+	return R.astype(float)
 
 if __name__ == '__main__':
 	load(input)

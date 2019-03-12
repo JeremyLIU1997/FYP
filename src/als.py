@@ -31,7 +31,6 @@ temprecons = 0
 
 def als_fit(mat): # mat is the rating matrix, mat = U * M
 	no_nonzero = np.count_nonzero(mat)
-	print("Number of nonzero: " + str(no_nonzero))
 	U = np.random.rand(mat.shape[0], Nf).astype(float)
 	M = np.random.rand(Nf, mat.shape[1]).astype(float)
 	# initialize first row of M with the average rating of the movie
@@ -41,9 +40,11 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 	N_cols = mat.shape[1]
 	lU = np.random.rand(mat.shape[0],Nf).astype(float)
 	lM = np.random.rand(Nf,mat.shape[1]).astype(float)
-	lamI = np.identity(Nf)
+	lam = 0.06
+	lamI = np.identity(Nf) * lam
 	current_err = 0
 	last_err = 0
+	print("Number of nonzero: " + str(no_nonzero))
 	for current_iter in range(N_iter): # iteration
 		print("Iteration #" + str(current_iter+1) + ": ", end="")
 		# update each row in M
@@ -53,7 +54,7 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 				continue
 			Um = U[users,:].T
 			vector = np.matmul(Um,mat[users,i])
-			matrix = np.matmul(Um,Um.T) # + np.count_nonzero(mat[:,i]) * lamI
+			matrix = np.matmul(Um,Um.T) + np.count_nonzero(mat[:,i]) * lamI
 			try:
 				lM[:,i] = np.matmul(np.linalg.inv(matrix),vector)
 			except Exception:
@@ -68,7 +69,7 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 				continue
 			Mm = M[:,movies]
 			vector = np.matmul(Mm,mat[i,movies])
-			matrix = np.matmul(Mm,Mm.T) # + np.count_nonzero(mat[i,:]) * lamI
+			matrix = np.matmul(Mm,Mm.T) + np.count_nonzero(mat[i,:]) * lamI
 			try:
 				lU[i,:] = np.matmul(np.linalg.inv(matrix),vector)
 			except Exception:
@@ -103,8 +104,8 @@ if __name__ == '__main__':
 	#R = load(input)
 	# R = np.random.rand(1000,200).astype(float)
 	# R = np.array([[1,3,3,5,3],[4,2,3,3,1],[5,1,5,3,2],[4,2,3,2,4]])
-	# R = load(input)
-	R = np.array([[5,3,0,1],[4,0,0,1],[1,1,0,5],[1,0,0,4],[0,1,5,4],[5,3,0,0]])
+	R = load(input)
+	# R = np.array([[5,3,0,1],[4,0,0,1],[1,1,0,5],[1,0,0,4],[0,1,5,4],[5,3,0,0]])
 
 	print("R.shape: " + str(R.shape))
 

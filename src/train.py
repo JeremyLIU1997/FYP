@@ -12,6 +12,7 @@ from tqdm import tqdm
 import sys
 from threading import Thread
 from time import sleep
+from als import euclidean_exclude_zero
 
 # my modules
 from save_model import *
@@ -87,7 +88,7 @@ try:
         H = H * (divideSkipZero(np.matmul(W.T, divideSkipZero(V, np.matmul(W, H))), np.matmul(W.T, one)))
         W = W * (divideSkipZero(np.matmul(divideSkipZero(V, np.matmul(W, H)), H.T), np.matmul(one, H.T)))
         temp = np.matmul(W, H)
-        print(euclidean(V, temp))
+        print(euclidean_exclude_zero(V, temp))
 except KeyboardInterrupt:
     etime = time.time()
     print("Training time: " + str(etime - stime) + " seconds.")
@@ -96,7 +97,8 @@ except KeyboardInterrupt:
     save(W, "../Model/W.txt")
     exit()
 
-
-print("Training time: " + str(etime - stime) + " seconds.")
+print(np.matmul(W,H))
 etime = time.time()
+print("Training time: " + str(etime - stime) + " seconds.")
+
 

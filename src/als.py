@@ -34,22 +34,43 @@ print("Nf = " + str(Nf))
 def euclidean(a, b):
 	return np.linalg.norm(a - b) ** 2
 
-def als_fit(mat): # mat is the rating matrix
+def als_fit(mat): # mat is the rating matrix, mat = U * M
 	U = np.random.rand(mat.shape[0], Nf)
 	M = np.random.rand(Nf, mat.shape[1])
 	N_rows = mat.shape[0]
 	N_cols = mat.shape[1]
 	# lM = np.zeros((Nf, mat.shape[1])).astype(float)
+	lU = np.random.rand(mat.shape[0],Nf)
 	lM = np.random.rand(Nf, mat.shape[1])
 	lamI = np.identity(Nf)
-	for current_iter in range(N_iter):
-		print("Iteration #" + str(current_iter))
+	current_err = 0
+	last_err = 0
+	for current_iter in range(N_iter): # iteration
+		print("Iteration #" + str(current_iter+1) + ": ", end="")
+		# update each row in M
 		for i in range(N_cols):
 			users = list(np.nonzero(mat[:,i])[0])
+			if len(users) == 0:
+				continue
 			Um = U[users,:].T
 			vector = np.matmul(Um,mat[users,i])
 			matrix = np.matmul(Um,Um.T) + np.count_nonzero(mat[:,i]) * lamI
 			lM[:,i] = np.matmul(np.linalg.inv(matrix),vector)
+		# update each row in U
+		for i in range(N_rows):
+			movies = list(np.nonzero(mat[i,:])[0])
+			if len(movies) == 0:
+				continue
+			Mm = M[:,movies]
+			vector = np.matmul(Mm,mat[i,movies])
+			matrix = np.matmul(Mm,Mm.T) + np.count_nonzero(mat[i,:]) * lamI
+			lU[i,:] = np.matmul(np.linalg.inv(matrix),vector).T
+		U = lU
+		M = lM
+		last_err = current_err
+		current_err = euclidean(mat, np.matmul(U,M))
+		print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
+		
 
 als_fit(R)
 exit(0)

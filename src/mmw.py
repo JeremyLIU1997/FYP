@@ -50,7 +50,7 @@ def matrix_factorization(R, P, Q, K, steps=5000, alpha=0.0002, beta=0.02):
         recons = np.matmul(P,Q)
         err = euclidean_exclude_zero(R, recons) / no_nonzero
         print(str(err) + " (%" + str(100 * err/last_err) + ")")
-        print(recons)
+        # print(recons)
         """
                 if e < 0.001:
             break
@@ -60,6 +60,8 @@ def matrix_factorization(R, P, Q, K, steps=5000, alpha=0.0002, beta=0.02):
 ###############################################################################
 
 if __name__ == "__main__":
+    print("Loading data...")
+    input = "../Data/netflix_data/my_data_80.txt"
     R = [
          [5,3,0,1],
          [4,0,0,1],
@@ -69,9 +71,11 @@ if __name__ == "__main__":
          [5,3,0,0]
         ]
 
+
     R = np.array(R)
-    input = "../Data/netflix_data/my_data_30.txt"
+    
     # R = load(input)
+    R = np.array([[5,3,2,1],[4,5,3,1],[1,1,2,5],[1,3,2,4],[3,1,5,4],[5,3,2,2]])
     N = len(R)
     M = len(R[0])
     K = 2
@@ -86,8 +90,7 @@ if __name__ == "__main__":
     print(Q)
     print(P.dot(Q.T))
 
-    exit(0)
-    print('Non-negative matrix factorization')
+    print('Sklearn Non-negative matrix factorization')
     model = NMF(n_components=2, init='random', random_state=0)
     W = model.fit_transform(R)
     H = model.components_

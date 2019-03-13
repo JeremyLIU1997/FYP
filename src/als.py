@@ -84,13 +84,13 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 		current_err = euclidean_exclude_zero(mat, recons) / no_nonzero
 		# print("U: \n" + str(U))
 		# print("M: \n" + str(M))
-		# print("recons: \n" + str(recons))
 		print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
+	print("recons_err: \n" + str(R - recons))
 		
 
 if __name__ == '__main__':
 	
-	# adjustable parameters
+	# adjustable parameter
 	input = "../Data/netflix_data/my_data_30.txt"
 	Nf = 2
 	N_iter = 5000
@@ -104,8 +104,9 @@ if __name__ == '__main__':
 	#R = load(input)
 	# R = np.random.rand(1000,200).astype(float)
 	# R = np.array([[1,3,3,5,3],[4,2,3,3,1],[5,1,5,3,2],[4,2,3,2,4]])
-	R = load(input)
+	# R = load(input)
 	# R = np.array([[5,3,0,1],[4,0,0,1],[1,1,0,5],[1,0,0,4],[0,1,5,4],[5,3,0,0]])
+	R = np.array([[5,3,2,1],[4,5,3,1],[1,1,2,5],[1,3,2,4],[3,1,5,4],[5,3,2,2]])
 
 	print("R.shape: " + str(R.shape))
 
@@ -116,6 +117,12 @@ if __name__ == '__main__':
 
 	try:
 		als_fit(R)
+		exit(0)
+		print('Sklearn Non-negative matrix factorization')
+		model = NMF(n_components=2, init='random', random_state=0)
+		W = model.fit_transform(R)
+		H = model.components_
+		print("Sklearn err: " + str(euclidean_exclude_zero(R,np.matmul(W,H)) / 24))
 	except KeyboardInterrupt:
 		save(tempU, "../Model/user.txt")
 		save(tempM, "../Model/item.txt")

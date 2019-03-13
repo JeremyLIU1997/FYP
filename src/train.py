@@ -32,8 +32,8 @@ n_iter = 1000
 Nf = 50
 
 
-# V = load("../Data/netflix_data/my_data_30.txt")
-V = np.array([[1,3,3,5,3],[4,2,3,3,1],[5,1,5,3,2],[4,2,3,2,4]])
+V = load("../Data/netflix_data/my_data_80.txt")
+# V = np.array([[1,3,3,5,3],[4,2,3,3,1],[5,1,5,3,2],[4,2,3,2,4]])
 W = np.random.rand(V.shape[0], Nf)
 H = np.random.rand(Nf, V.shape[1])
 one = np.full((V.shape[0], V.shape[1]), 1).astype(float)

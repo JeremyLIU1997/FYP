@@ -28,6 +28,7 @@ from pyspark.mllib.util import MLUtils
 # math
 import numpy as np
 # my modules
+from load import *
 # others
 import os
 
@@ -42,32 +43,17 @@ def init():
 	# clear model from last time
 	# os.system("hdfs dfs -rm -R /NMF/model/my_model")
 
-
-
-
 def main():
 	init()
 
-	dm2 = Matrices.dense(3, 2, [1, 2, 3, 4, 5, 6])
-	sm = Matrices.sparse(3, 2, [0, 1, 3], [0, 2, 1], [9, 6, 8])
-	ar = np.array([1,2,3])
-	sc.broadcast(ar)
+	input = "../Data/netflix_data/my_data_30_sorted.txt"
+	R_sparse_column, R_sparse_row = load_as_sparse(input)
+
+	sc.broadcast(R_sparse_column)
+
 	print("Broadcast success!")
-	"""
-	data = sc.parallelize([
-		LabeledPoint(0.0, SparseVector(3, {0: 8.0, 1: 7.0})),
-		LabeledPoint(1.0, SparseVector(3, {1: 9.0, 2: 6.0})),
-		LabeledPoint(1.0, [0.0, 9.0, 8.0]),
-		LabeledPoint(2.0, [7.0, 9.0, 5.0]),
-		LabeledPoint(2.0, [8.0, 7.0, 3.0])])
-
-	print(data.collect())
-	"""
-
-
-
-
-
+	
+	
 
 if __name__ == '__main__':
 	main()

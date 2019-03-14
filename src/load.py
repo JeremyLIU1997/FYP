@@ -116,6 +116,7 @@ def load_as_sparse(input):
 							remaining_bool[i] = False
 							remaining_columns -= 1
 			index[min_].append(min_index)
+			values[min_].append(R_sparse_column[2][min_index][progress[min_index] - 1])
 
 		print("Success!\n")
 

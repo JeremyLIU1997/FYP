@@ -13,26 +13,29 @@
 
 # imports
 from tqdm import tqdm
+import sys
 
+if len(sys.argv) == 1: # if no argument
+	print("Takes 1 argument. Exit.")
+	exit(1)
 # adjust parameters here to generate different
 # sizes of datasets
 movie_index = 0
 users = []
-number_of_movies_chosen = 200
+number_of_movies_chosen = int(sys.argv[1])
 output_file = "../Data/netflix_data/my_data_" + str(number_of_movies_chosen) + "_sorted.txt"
 
 ################################################################
 with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
-	for line in tqdm(f):
+	for line in f:
 		if line[-2] == ":":
-			if movie_index == number_of_movies_chosen + 1:
-				break;
-			movie_index += 1
+			if int(line.split(":")[0]) == number_of_movies_chosen + 1:
+				break
 			continue
 		users.append(int(line.split(",")[0]))
 print("Getting unique...")
 users = list(set(users))
-print("Total users: " + str(len(users)))
+print("Unique users: " + str(len(users)))
 print("Sorting...")
 users.sort()
 id_map_dict = {}
@@ -57,27 +60,6 @@ with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
 					ratings = []
 					break
 				split = line.split(",")
-				ratings.append([int(split[0]),split[1]])
+				ratings.append([int(id_map_dict[int(split[0])]),split[1]])
 			f.seek(prev_cursor) # revert to previous line
 			
-
-
-
-		
-		
-
-"""
-
-# generate unordered
-with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
-	with open(output_file, "w+") as output:
-			for line in tqdm(f):
-				if line[-2] == ":":
-					if int(line.split(":")[0]) == number_of_movies_chosen + 1:
-						break;
-					output.write(line)
-					continue
-				split = line.split(",")
-				output.write(str(id_map_dict[int(split[0])]) + "," + split[1] + "\n")
-
-"""

@@ -1,32 +1,69 @@
+#!/usr/local/bin/python3
 
+# Author: LIU Le
+# Student ID: 15103617D
+
+# This file implements ALS algorithm for recommender system
+# with Spark. The algorithm summary is as follows:
+
+"""
+********************************************************************************
+ALS with Spark:
+1. Broadcast R (by row and by column) with the sparse representation
+2. Broadcast U
+3. (Update M first) For column in M, map (send to processing nodes to compute)
+4. Broadcast M
+5. (Update U now)   For row in U, map (send to processing nodes to compute)
+6. Repeat 2-4 until convergence
+********************************************************************************
+"""
+
+# Spark
 from pyspark import SparkContext
-from pyspark.mllib.recommendation import ALS, MatrixFactorizationModel, Rating
+from pyspark.sql import SparkSession
+# from pyspark.mllib.recommendation import ALS, MatrixFactorizationModel, Rating
+from pyspark.mllib.linalg import Matrix, Matrices
+from pyspark.mllib.linalg.distributed import BlockMatrix
+from pyspark.mllib.util import MLUtils
+# math
+import numpy as np
+# my modules
+# others
 import os
 
-# clear model from last time
-os.system("hdfs dfs -rm -R /NMF/model/my_model")
+# global variables
+sc = 0
+spark = 0
 
-sc = SparkContext()
+def init():
+	global sc
+	sc = SparkContext()
+	spark = SparkSession(sc)
+	# clear model from last time
+	# os.system("hdfs dfs -rm -R /NMF/model/my_model")
 
-# Load and parse the data
-data = sc.textFile("/NMF/data/als_small_test.txt")
-# data = [[5,3,0,1],[4,0,0,1],[1,1,0,5],[1,0,0,4],[0,1,5,4],[5,3,0,0]]
+def main():
+	init()
 
-ratings = data.map(lambda l: l.split(','))\
-    .map(lambda l: Rating(int(l[0]), int(l[1]), float(l[2])))
+	dm2 = Matrices.dense(3, 2, [1, 2, 3, 4, 5, 6])
+	sm = Matrices.sparse(3, 2, [0, 1, 3], [0, 2, 1], [9, 6, 8])
 
-# Build the recommendation model using Alternating Least Squares
-rank = 10
-numIterations = 10
-model = ALS.train(ratings, rank, numIterations)
+	sc.broadcast(sm)
+	"""
+	data = sc.parallelize([
+		LabeledPoint(0.0, SparseVector(3, {0: 8.0, 1: 7.0})),
+		LabeledPoint(1.0, SparseVector(3, {1: 9.0, 2: 6.0})),
+		LabeledPoint(1.0, [0.0, 9.0, 8.0]),
+		LabeledPoint(2.0, [7.0, 9.0, 5.0]),
+		LabeledPoint(2.0, [8.0, 7.0, 3.0])])
 
-# Evaluate the model on training data
-testdata = ratings.map(lambda p: (p[0], p[1]))
-predictions = model.predictAll(testdata).map(lambda r: ((r[0], r[1]), r[2]))
-ratesAndPreds = ratings.map(lambda r: ((r[0], r[1]), r[2])).join(predictions)
-MSE = ratesAndPreds.map(lambda r: (r[1][0] - r[1][1])**2).mean()
-print("Mean Squared Error = " + str(MSE))
+	print(data.collect())
+	"""
 
-# Save and load model
-model.save(sc, "/NMF/model/my_model")
-sameModel = MatrixFactorizationModel.load(sc, "/NMF/model/my_model")
+
+
+
+
+
+if __name__ == '__main__':
+	main()

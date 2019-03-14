@@ -21,6 +21,8 @@ n = mat.numCols()  # 2
 print("m: " + str(m))
 print("n: " + str(n))
 
+print(mat)
+
 # Get the blocks as an RDD of sub-matrix blocks.
 blocksRDD = mat.blocks
 

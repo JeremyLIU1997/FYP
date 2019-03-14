@@ -50,8 +50,9 @@ def main():
 
 	dm2 = Matrices.dense(3, 2, [1, 2, 3, 4, 5, 6])
 	sm = Matrices.sparse(3, 2, [0, 1, 3], [0, 2, 1], [9, 6, 8])
-
-	sc.broadcast(sm)
+	ar = np.array([1,2,3])
+	sc.broadcast(ar)
+	print("Broadcast success!")
 	"""
 	data = sc.parallelize([
 		LabeledPoint(0.0, SparseVector(3, {0: 8.0, 1: 7.0})),

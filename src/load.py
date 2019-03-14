@@ -59,11 +59,13 @@ def load_as_sparse(input):
 
 		print("#users: " + str(user_count))
 		print("#movies: " + str(movie_count))
-		print("Constructing Sparse...")
+		print("Constructing Sparse_Column...")
 
-		R_sparse = [[0,0],[],[]] # [matrix dimension, index (2D), value (2D)]
-		R_sparse[0][0] = user_count; R_sparse[0][1] = movie_count # assign array dimensions		
-		# Note the index here is by column. i.e., index[0] is first column of movie
+		# construct sparse_column ###################################################
+		R_sparse_column = [[0,0],[],[]] # [matrix dimension, index (2D), value (2D)]
+		R_sparse_column[0][0] = user_count
+		R_sparse_column[0][1] = movie_count # assign array dimensions		
+		# Note the index here is by column. i.e., index[0] is first column of R
 		index = [[] for i in range(movie_count)] # initialize 2D array
 		values = [[] for i in range(movie_count)] # initialize 2D array
 		f.seek(0)
@@ -77,13 +79,47 @@ def load_as_sparse(input):
 			index[current_index].append(int(split[0]))
 			values[current_index].append(float(split[1]))
 
-		R_sparse[1] = index
-		R_sparse[2] = values
-		print("======================================")
-		print("Index: " + str(index[-1]))
-		print("Values: " + str(values[-1]))
+		R_sparse_column[1] = index
+		R_sparse_column[2] = values
+		print("Success!\n")
 
-	return R_sparse
+		print("Constructing Sparse_Row...")
+		# construct sparse_row ###################################################
+		index = None; values = None
+		R_sparse_row = [[0,0],[],[]] # [matrix dimension, index (2D), value (2D)]
+		R_sparse_row[0][0] = user_count
+		R_sparse_row[0][1] = movie_count # assign array dimensions		
+		# Note the index here is by row. i.e., index[0] is first row of R
+		index = [[] for i in range(user_count)] # initialize 2D array
+		values = [[] for i in range(user_count)] # initialize 2D array
+
+		length = []
+		for i in range(movie_count): # assign the lengths of the movie columns
+			length.append(len(R_sparse_column[1][i]))
+		progress = [0 for i in range(movie_count)] # track progress of each column
+
+		remaining_columns = movie_count # track number of columns that has not finished scanning
+		remaining_bool = [True for i in range(movie_count)]
+		while True:
+			min_ = None
+			min_index = None
+			if remaining_columns == 0:
+				break
+			for i in range(movie_count):
+				if (progress[i] != length[i]) and (min_ == None or R_sparse_column[1][i][progress[i]] < min_):
+					min_index = i
+					min_ = R_sparse_column[1][i][progress[i]]
+					progress[i] += 1
+					# check if the column has finished
+					if progress[i] == length[i]:
+						if remaining_bool[i] == True:
+							remaining_bool[i] = False
+							remaining_columns -= 1
+			index[min_].append(min_index)
+
+		print("Success!\n")
+
+	return R_sparse_column, R_sparse_row
 
 
 if __name__ == '__main__':

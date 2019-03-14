@@ -60,43 +60,30 @@ def load_as_sparse(input):
 		print("#users: " + str(user_count))
 		print("#movies: " + str(movie_count))
 		print("Constructing Sparse...")
-		f.seek(0)
 
 		R_sparse = [[0,0],[],[]] # [matrix dimension, index (2D), value (2D)]
-		R_sparse[0][0] = user_count; R_sparse[0][1] = movie_count # assign array dimensions
-		
-		index = [[0 for j in range(1)] for i in range(user_count)] # initialize 2D array
-		print(np.array(index).shape)
-		exit(0)
+		R_sparse[0][0] = user_count; R_sparse[0][1] = movie_count # assign array dimensions		
+		# Note the index here is by column. i.e., index[0] is first column of movie
+		index = [[] for i in range(movie_count)] # initialize 2D array
+		values = [[] for i in range(movie_count)] # initialize 2D array
 		f.seek(0)
 
-		for i in range(movie_count):
-			line = f.readline()
-			output.write(line)
-			while True:
-				prev_cursor = f.tell()
-				line = f.readline()
-				if line[-2] == ":":
-					ratings.sort()
-					for e in ratings:
-						output.write(str(e[0]) + "," + e[1] + "\n")
-					ratings = []
-					break
-				split = line.split(",")
-				ratings.append([int(id_map_dict[int(split[0])]),split[1]])
-			f.seek(prev_cursor) # revert to previous line
-
-
-
-
-		current_movie = 0
+		current_index = 0
 		for line in f:
 			if line[-2] == ":":
-				current_movie = int(line.split(":")[0])
+				current_index = int(line.split(":")[0]) - 1
 				continue
 			split = line.split(",")
-			R[int(split[0])][current_movie - 1] = int(split[1])
-	return R.astype(float)
+			index[current_index].append(int(split[0]))
+			values[current_index].append(float(split[1]))
+
+		R_sparse[1] = index
+		R_sparse[2] = values
+		print("======================================")
+		print("Index: " + str(index[-1]))
+		print("Values: " + str(values[-1]))
+
+	return R_sparse
 
 
 if __name__ == '__main__':

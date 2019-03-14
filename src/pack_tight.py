@@ -18,8 +18,8 @@ from tqdm import tqdm
 # sizes of datasets
 movie_index = 0
 users = []
-number_of_movies_chosen = 30
-output_file = "../Data/netflix_data/my_data_" + str(number_of_movies_chosen) + ".txt"
+number_of_movies_chosen = 200
+output_file = "../Data/netflix_data/my_data_" + str(number_of_movies_chosen) + "_sorted.txt"
 
 ################################################################
 with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
@@ -39,6 +39,36 @@ id_map_dict = {}
 for i in range(len(users)):
 	id_map_dict[users[i]] = i
 
+
+# generate ordered
+with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
+	with open(output_file, "w+") as output:
+		ratings = []
+		for i in range(number_of_movies_chosen):
+			line = f.readline()
+			output.write(line)
+			while True:
+				prev_cursor = f.tell()
+				line = f.readline()
+				if line[-2] == ":":
+					ratings.sort()
+					for e in ratings:
+						output.write(str(e[0]) + "," + e[1] + "\n")
+					ratings = []
+					break
+				split = line.split(",")
+				ratings.append([int(split[0]),split[1]])
+			f.seek(prev_cursor) # revert to previous line
+			
+
+
+
+		
+		
+
+"""
+
+# generate unordered
 with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
 	with open(output_file, "w+") as output:
 			for line in tqdm(f):
@@ -50,3 +80,4 @@ with open("../Data/netflix_data/combined_data_1.txt",'r') as f:
 				split = line.split(",")
 				output.write(str(id_map_dict[int(split[0])]) + "," + split[1] + "\n")
 
+"""

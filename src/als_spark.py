@@ -42,6 +42,9 @@ def init():
 	# clear model from last time
 	# os.system("hdfs dfs -rm -R /NMF/model/my_model")
 
+
+
+
 def main():
 	init()
 

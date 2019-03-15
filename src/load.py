@@ -109,15 +109,16 @@ def load_as_sparse(input):
 				if (progress[i] != length[i]) and (min_ == None or R_sparse_column[1][i][progress[i]] < min_):
 					min_index = i
 					min_ = R_sparse_column[1][i][progress[i]]
-					progress[i] += 1
-					# check if the column has finished
-					if progress[i] == length[i]:
-						if remaining_bool[i] == True:
-							remaining_bool[i] = False
-							remaining_columns -= 1
+			progress[min_index] += 1
+			# check if the column has finished
+			if progress[min_index] == length[min_index]:
+				if remaining_bool[min_index] == True:
+					remaining_bool[min_index] = False
+					remaining_columns -= 1
 			index[min_].append(min_index)
 			values[min_].append(R_sparse_column[2][min_index][progress[min_index] - 1])
-
+		R_sparse_row[1] = index
+		R_sparse_row[2] = values
 		print("Success!\n")
 
 	return R_sparse_column, R_sparse_row
@@ -126,4 +127,13 @@ def load_as_sparse(input):
 if __name__ == '__main__':
 	# load(input)
 	input = "../Data/netflix_data/my_data_30_sorted.txt"
-	load_as_sparse(input)
+	# print("By column nonzero: " + str(np.count_nonzero(R,axis=0)))
+	# print("By row nonzero: " + str(np.count_nonzero(R,axis=1)))
+	R_sparse_column, R_sparse_row = load_as_sparse(input)
+	"""
+	for i in range(1):
+		print("=========Dense: " + str(R[:,i]))
+		print("Sparse: " + str(by_column[1][i]) + "\n--> " + str(by_column[2][i]))
+		print("length: " + str(len(by_column[1][i])))
+	"""
+

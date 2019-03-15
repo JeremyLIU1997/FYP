@@ -123,6 +123,28 @@ def load_as_sparse(input):
 
 	return R_sparse_column, R_sparse_row
 
+def extract_from_sparse(ar_sparse, indices, option):
+	if option == "col": # columns will be extracted (from column sparse matrix)
+		dense_array = np.zeros(ar_sparse[0][0],len(indices)).astype(float)
+		extracted_indices = ar_sparse[1][indices]
+		extracted_values = ar_sparse[2][indices]
+		for j in range(len(extracted_indices)):
+			for i in range(len(extracted_indices[j])):
+				dense_array[extracted_indices[j][i]][j] = extracted_values[j][i]
+	elif option == "row": # rows will be extracted (from row sparse matrix)
+		dense_array = np.zeros(len(indices),ar_sparse[0][1]).astype(float)
+		extracted_indices = ar_sparse[1][indices]
+		extracted_values = ar_sparse[2][indices]
+		for i in range(len(extracted_indices)):
+			for j in range(len(extracted_values[i])):
+				dense_array[i][extracted_indices[i][j]] = extracted_values[i][j]
+	else:
+		print("Invalid option error. Exit.")
+		exit(1)
+	return dense_array
+
+
+
 
 if __name__ == '__main__':
 	# load(input)

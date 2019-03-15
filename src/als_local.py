@@ -1,5 +1,11 @@
 #!/usr/local/bin/python3
 
+# Author: LIU Le
+# Student ID: 15103617D
+
+# This file implements the ALS algorithm for
+# recommender system. This is a local version
+
 # imports
 from tqdm import tqdm
 import sys

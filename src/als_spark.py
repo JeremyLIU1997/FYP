@@ -59,13 +59,25 @@ def update_M(col):
 	lamI = np.identity(Nf) * lam
 
 	vector = np.matmul(Um.T, extract_from_sparse(R_sparse_column_, [col_index], option = "col")[users])
-	matrix = np.matmul(Um.T,Um) + lam * lamI
-	return np.matmul(np.linalg.inv(matrix),vector)
+	matrix = np.matmul(Um.T,Um) + column_nonzero_count_[col_index] * lamI
+	return np.append(np.matmul(np.linalg.inv(matrix),vector),col_index)
 
 def update_U(row):
-	return row
+	# gather broadcast variables
+	R_sparse_row_ = R_sparse_row.value
+	row_nonzero_count_ = row_nonzero_count.value
+	M_ = M.value
+	M_ = M_[:,0:len(M_[0])-1]
+	row_index = int(row[-1])
+	movies = R_sparse_row_[1][row_index]
+	Mm = M_[movies,:]
 
+	lam = 0.06
+	lamI = np.identity(Nf) * lam
 
+	vector = np.matmul(Mm.T, extract_from_sparse(R_sparse_row_, [row_index], option = "row")[:,movies].T)
+	matrix = np.matmul(Mm.T,Mm) + row_nonzero_count_[row_index] * lamI
+	return np.append(np.matmul(np.linalg.inv(matrix),vector),row_index)
 
 ######################################    MAIN FUNCTION    ##############################################
 
@@ -75,7 +87,7 @@ init()
 Nf = 2
 N_iter = 100
 
-input = "../Data/netflix_data/my_data_30_sorted.txt"
+input = "../Data/netflix_data/my_data_3_sorted.txt"
 R_sparse_column, R_sparse_row = load_as_sparse(input)
 row_nonzero_count = column_nonzero_count = []
 for i in range(len(R_sparse_column[1])):
@@ -100,6 +112,7 @@ R_sparse_column = sc.broadcast(R_sparse_column)
 column_nonzero_count = sc.broadcast(column_nonzero_count)
 row_nonzero_count = sc.broadcast(row_nonzero_count)
 print("Broadcast success!\n")
+
 
 for i in range(N_iter):
 	print("Iteration #" + str(i + 1) + ": ")

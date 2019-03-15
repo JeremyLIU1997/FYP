@@ -74,7 +74,7 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 			if len(movies) == 0:
 				continue
 			Mm = M[:,movies]
-			vector = np.matmul(Mm,mat[i,movies])
+			vector = np.matmul(Mm,mat[i,movies]) # Mm is of dimension (Nf, number_of_movie)
 			matrix = np.matmul(Mm,Mm.T) + np.count_nonzero(mat[i,:]) * lamI
 			try:
 				lU[i,:] = np.matmul(np.linalg.inv(matrix),vector)
@@ -97,7 +97,7 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 if __name__ == '__main__':
 	
 	# adjustable parameter
-	input = "../Data/netflix_data/my_data_30.txt"
+	input = "../Data/netflix_data/my_data_30_sorted.txt"
 	Nf = 2
 	N_iter = 5000
 	#========================================================
@@ -110,9 +110,9 @@ if __name__ == '__main__':
 	#R = load(input)
 	# R = np.random.rand(1000,200).astype(float)
 	# R = np.array([[1,3,3,5,3],[4,2,3,3,1],[5,1,5,3,2],[4,2,3,2,4]])
-	# R = load(input)
+	R = load(input)
 	# R = np.array([[5,3,0,1],[4,0,0,1],[1,1,0,5],[1,0,0,4],[0,1,5,4],[5,3,0,0]])
-	R = np.array([[5,3,2,1],[4,5,3,1],[1,1,2,5],[1,3,2,4],[3,1,5,4],[5,3,2,2]])
+	# R = np.array([[5,3,2,1],[4,5,3,1],[1,1,2,5],[1,3,2,4],[3,1,5,4],[5,3,2,2]])
 
 	print("R.shape: " + str(R.shape))
 

@@ -133,8 +133,8 @@ def extract_from_sparse(ar_sparse, indices, option):
 				dense_array[extracted_indices[j][i]][j] = extracted_values[j][i]
 	elif option == "row": # rows will be extracted (from row sparse matrix)
 		dense_array = np.zeros((len(indices),ar_sparse[0][1])).astype(float)
-		extracted_indices = ar_sparse[1][indices]
-		extracted_values = ar_sparse[2][indices]
+		extracted_indices = np.array(ar_sparse[1])[indices]
+		extracted_values = np.array(ar_sparse[2])[indices]
 		for i in range(len(extracted_indices)):
 			for j in range(len(extracted_values[i])):
 				dense_array[i][extracted_indices[i][j]] = extracted_values[i][j]

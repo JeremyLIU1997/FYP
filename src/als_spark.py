@@ -79,6 +79,15 @@ def update_U(row):
 	matrix = np.matmul(Mm.T,Mm) + row_nonzero_count_[row_index] * lamI
 	return np.append(np.matmul(np.linalg.inv(matrix),vector),row_index)
 
+def euclidean_exclude_zero(a,b):
+	err = 0
+	for i in range(len(a)):
+		for j in range(len(a[i])):
+			if (a[i][j] == 0 or b[i][j] == 0):
+				continue
+			err += (a[i][j] - b[i][j])**2
+	return err
+
 ######################################    MAIN FUNCTION    ##############################################
 
 init()
@@ -87,7 +96,7 @@ init()
 Nf = 2
 N_iter = 100
 
-input = "../Data/netflix_data/my_data_3_sorted.txt"
+input = "../Data/netflix_data/my_data_10_sorted.txt"
 R_sparse_column, R_sparse_row = load_as_sparse(input)
 row_nonzero_count = column_nonzero_count = []
 for i in range(len(R_sparse_column[1])):
@@ -99,6 +108,10 @@ for i in range(len(R_sparse_row[1])):
 # identification during update process in workers
 U = np.random.rand(R_sparse_row[0][0], Nf + 1).astype(float)
 M = np.random.rand(Nf + 1, R_sparse_row[0][1]).astype(float)
+# initialize first row of M with the average rating of the movie
+# other entries a small random number
+for i in range(len(R_sparse_column[2])):
+	M[0,i] = sum(R_sparse_column[2][i]) / len(R_sparse_column[2][i])
 for i in range(len(U)):
 	U[i][-1] = i
 for i in range(M.shape[1]):
@@ -113,27 +126,40 @@ column_nonzero_count = sc.broadcast(column_nonzero_count)
 row_nonzero_count = sc.broadcast(row_nonzero_count)
 print("Broadcast success!\n")
 
-
+R_dense = load(input)
+no_nonzero = np.count_nonzero(R_dense)
+last_err = 0
+current_err = 0
 for i in range(N_iter):
-	print("Iteration #" + str(i + 1) + ": ")
+	print("Iteration #" + str(i + 1) + ": ",end="")
 	U = sc.broadcast(np.array(U))
-	print("1")
+	# print("1")
 	M = sc.parallelize(M)
-	print("2")
+	# print("2")
 	M = M.map(update_M)
-	print("3")
+	# print("3")
 	M = M.collect()
-	print("4")
+	# print("4")
 	M = sc.broadcast(np.array(M))
-	print("5")
+	# print("5")
 	U = sc.parallelize(U.value)
-	print("6")
+	# print("6")
 	U = U.map(update_U)
-	print("7")
+	# print("7")
 	U = U.collect()
-	print("8")
+	# print("8")
 	M = M.value
-	print("9")
+	# print("9")
+	U = np.array(U)
+	M = np.array(M)
+	last_err = current_err
+	current_err = euclidean_exclude_zero(R_dense,np.matmul(U[:,0:len(U[0])-1],M[:,0:len(M[0])-1].T)) / no_nonzero
+	print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
+	"""
+	if current_err > last_err:
+		print("Learning complete.")
+		break
+	"""
 
 
 print(M.take(1))

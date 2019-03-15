@@ -125,14 +125,14 @@ def load_as_sparse(input):
 
 def extract_from_sparse(ar_sparse, indices, option):
 	if option == "col": # columns will be extracted (from column sparse matrix)
-		dense_array = np.zeros(ar_sparse[0][0],len(indices)).astype(float)
+		dense_array = np.zeros((ar_sparse[0][0],len(indices))).astype(float)
 		extracted_indices = ar_sparse[1][indices]
 		extracted_values = ar_sparse[2][indices]
 		for j in range(len(extracted_indices)):
 			for i in range(len(extracted_indices[j])):
 				dense_array[extracted_indices[j][i]][j] = extracted_values[j][i]
 	elif option == "row": # rows will be extracted (from row sparse matrix)
-		dense_array = np.zeros(len(indices),ar_sparse[0][1]).astype(float)
+		dense_array = np.zeros((len(indices),ar_sparse[0][1])).astype(float)
 		extracted_indices = ar_sparse[1][indices]
 		extracted_values = ar_sparse[2][indices]
 		for i in range(len(extracted_indices)):

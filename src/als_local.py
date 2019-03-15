@@ -53,7 +53,7 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 	print("Number of nonzero: " + str(no_nonzero))
 	for current_iter in range(N_iter): # iteration
 		print("Iteration #" + str(current_iter+1) + ": ", end="")
-		# update each row in M
+		# update each column in M
 		for i in range(N_cols):
 			users = list(np.nonzero(mat[:,i])[0])
 			if len(users) == 0:

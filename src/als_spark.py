@@ -50,13 +50,18 @@ def update_M(col):
 	R_sparse_column_ = R_sparse_column.value
 	column_nonzero_count_ = column_nonzero_count.value
 	U_ = U.value
-
 	U_ = U_[:,0:len(U_[0]) - 1]
 	col_index = int(col[-1])
-	print(col_index)
 	users = R_sparse_column_[1][col_index]
 	Um = U_[users,:]
-	vector = np.matmul(Um, extract_from_sparse(R_sparse_column_, [col_index], option = "col").T)
+
+	lam = 0.06
+	lamI = np.identity(Nf) * lam
+
+	vector = np.matmul(Um.T, extract_from_sparse(R_sparse_column_, [col_index], option = "col")[users])
+	matrix = np.matmul(Um.T,Um) + lam * lamI
+	return np.matmul(np.linalg.inv(matrix),vector)
+
 
 
 

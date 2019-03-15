@@ -62,18 +62,18 @@ def update_M(col):
 	matrix = np.matmul(Um.T,Um) + lam * lamI
 	return np.matmul(np.linalg.inv(matrix),vector)
 
-
-
+def update_U(row):
+	return row
 
 
 
 ######################################    MAIN FUNCTION    ##############################################
-	
 
 init()
 
 # adjustable parameters
 Nf = 2
+N_iter = 100
 
 input = "../Data/netflix_data/my_data_30_sorted.txt"
 R_sparse_column, R_sparse_row = load_as_sparse(input)
@@ -92,9 +92,6 @@ for i in range(len(U)):
 for i in range(M.shape[1]):
 	M[-1][i] = i
 M = M.T # store column as rows, easily for parallelization
-M = sc.parallelize(M)
-U = sc.broadcast(U)
-
 
 # broadcast data to workers
 print("Broadcasting...")
@@ -104,6 +101,26 @@ column_nonzero_count = sc.broadcast(column_nonzero_count)
 row_nonzero_count = sc.broadcast(row_nonzero_count)
 print("Broadcast success!\n")
 
-M = M.map(update_M)
+for i in range(N_iter):
+	print("Iteration #" + str(i + 1) + ": ")
+	U = sc.broadcast(np.array(U))
+	print("1")
+	M = sc.parallelize(M)
+	print("2")
+	M = M.map(update_M)
+	print("3")
+	M = M.collect()
+	print("4")
+	M = sc.broadcast(np.array(M))
+	print("5")
+	U = sc.parallelize(U.value)
+	print("6")
+	U = U.map(update_U)
+	print("7")
+	U = U.collect()
+	print("8")
+	M = M.value
+	print("9")
+
 
 print(M.take(1))

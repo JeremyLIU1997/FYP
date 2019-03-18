@@ -1,0 +1,1015 @@
+[LeLe@Jeremys-MacBook-Pro src]$ spark-submit --master local[4] als_spark.py
+#users: 158405
+#movies: 30
+Constructing Sparse_Column...
+Success!
+
+Constructing Sparse_Row...
+Success!
+
+Broadcasting...
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 400.0 B, free 366.3 MB)
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_0 locally took  63 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_0 without replication took  64 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_0_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0_piece0
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 2.2 MB, free 364.1 MB)
+19/03/17 16:58:09 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.11.174.235:58621 (size: 2.2 MB, free: 364.1 MB)
+19/03/17 16:58:09 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Told master about block broadcast_0_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_0_piece0 locally took  6 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_0_piece0 without replication took  6 ms
+19/03/17 16:58:09 INFO SparkContext: Created broadcast 0 from broadcast at PythonRDD.scala:496
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_1
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 400.0 B, free 364.1 MB)
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_1 locally took  2 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_1 without replication took  2 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_1_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1_piece0
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 1235.7 KB, free 362.9 MB)
+19/03/17 16:58:09 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.11.174.235:58621 (size: 1235.7 KB, free: 362.9 MB)
+19/03/17 16:58:09 DEBUG BlockManagerMaster: Updated info of block broadcast_1_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Told master about block broadcast_1_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_1_piece0 locally took  2 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_1_piece0 without replication took  2 ms
+19/03/17 16:58:09 INFO SparkContext: Created broadcast 1 from broadcast at PythonRDD.scala:496
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_2
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_2
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_2
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_2
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 400.0 B, free 362.9 MB)
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_2 locally took  1 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_2
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_2 without replication took  2 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_2_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_2_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_2_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_2_piece0
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 127.2 KB, free 362.8 MB)
+19/03/17 16:58:09 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.11.174.235:58621 (size: 127.2 KB, free: 362.8 MB)
+19/03/17 16:58:09 DEBUG BlockManagerMaster: Updated info of block broadcast_2_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Told master about block broadcast_2_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_2_piece0 locally took  2 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_2_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_2_piece0 without replication took  2 ms
+19/03/17 16:58:09 INFO SparkContext: Created broadcast 2 from broadcast at PythonRDD.scala:496
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_3
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_3
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_3
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_3
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 400.0 B, free 362.8 MB)
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_3 locally took  1 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_3
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_3 without replication took  1 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to put broadcast_3_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_3_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_3_piece0
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_3_piece0
+19/03/17 16:58:09 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 127.2 KB, free 362.7 MB)
+19/03/17 16:58:09 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.11.174.235:58621 (size: 127.2 KB, free: 362.7 MB)
+19/03/17 16:58:09 DEBUG BlockManagerMaster: Updated info of block broadcast_3_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Told master about block broadcast_3_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Put block broadcast_3_piece0 locally took  2 ms
+19/03/17 16:58:09 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_3_piece0
+19/03/17 16:58:09 DEBUG BlockManager: Putting block broadcast_3_piece0 without replication took  2 ms
+19/03/17 16:58:09 INFO SparkContext: Created broadcast 3 from broadcast at PythonRDD.scala:496
+Broadcast success!
+
+#users: 158405
+#movies: 30
+(158405, 3)
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 trying to put broadcast_4
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_4
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_4
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_4
+19/03/17 16:58:10 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 400.0 B, free 362.7 MB)
+19/03/17 16:58:10 DEBUG BlockManager: Put block broadcast_4 locally took  1 ms
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_4
+19/03/17 16:58:10 DEBUG BlockManager: Putting block broadcast_4 without replication took  1 ms
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 trying to put broadcast_4_piece0
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_4_piece0
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_4_piece0
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_4_piece0
+19/03/17 16:58:10 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 1117.0 B, free 362.7 MB)
+19/03/17 16:58:10 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.11.174.235:58621 (size: 1117.0 B, free: 362.7 MB)
+19/03/17 16:58:10 DEBUG BlockManagerMaster: Updated info of block broadcast_4_piece0
+19/03/17 16:58:10 DEBUG BlockManager: Told master about block broadcast_4_piece0
+19/03/17 16:58:10 DEBUG BlockManager: Put block broadcast_4_piece0 locally took  1 ms
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_4_piece0
+19/03/17 16:58:10 DEBUG BlockManager: Putting block broadcast_4_piece0 without replication took  1 ms
+19/03/17 16:58:10 INFO SparkContext: Created broadcast 4 from broadcast at PythonRDD.scala:496
+19/03/17 16:58:10 DEBUG ClosureCleaner: +++ Cleaning closure <function1> (org.apache.spark.rdd.RDD$$anonfun$collect$1$$anonfun$13) +++
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + declared fields: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public static final long org.apache.spark.rdd.RDD$$anonfun$collect$1$$anonfun$13.serialVersionUID
+19/03/17 16:58:10 DEBUG ClosureCleaner:      private final org.apache.spark.rdd.RDD$$anonfun$collect$1 org.apache.spark.rdd.RDD$$anonfun$collect$1$$anonfun$13.$outer
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + declared methods: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.rdd.RDD$$anonfun$collect$1$$anonfun$13.apply(java.lang.Object)
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.rdd.RDD$$anonfun$collect$1$$anonfun$13.apply(scala.collection.Iterator)
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + inner classes: 0
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outer classes: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      org.apache.spark.rdd.RDD$$anonfun$collect$1
+19/03/17 16:58:10 DEBUG ClosureCleaner:      org.apache.spark.rdd.RDD
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outer objects: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      <function0>
+19/03/17 16:58:10 DEBUG ClosureCleaner:      PythonRDD[1] at RDD at PythonRDD.scala:48
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + populating accessed fields because this is the starting closure
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + fields accessed by starting closure: 4
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class org.apache.spark.rdd.RDD$$anonfun$collect$1,Set($outer))
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class org.apache.spark.rdd.RDD,Set(org$apache$spark$rdd$RDD$$evidence$1))
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class scala.runtime.AbstractFunction0,Set())
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class java.lang.Object,Set())
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outermost object is not a closure or REPL line object, so do not clone it: (class org.apache.spark.rdd.RDD,PythonRDD[1] at RDD at PythonRDD.scala:48)
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + cloning the object <function0> of class org.apache.spark.rdd.RDD$$anonfun$collect$1
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + cleaning cloned closure <function0> recursively (org.apache.spark.rdd.RDD$$anonfun$collect$1)
+19/03/17 16:58:10 DEBUG ClosureCleaner: +++ Cleaning closure <function0> (org.apache.spark.rdd.RDD$$anonfun$collect$1) +++
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + declared fields: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public static final long org.apache.spark.rdd.RDD$$anonfun$collect$1.serialVersionUID
+19/03/17 16:58:10 DEBUG ClosureCleaner:      private final org.apache.spark.rdd.RDD org.apache.spark.rdd.RDD$$anonfun$collect$1.$outer
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + declared methods: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.rdd.RDD$$anonfun$collect$1.apply()
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public org.apache.spark.rdd.RDD org.apache.spark.rdd.RDD$$anonfun$collect$1.org$apache$spark$rdd$RDD$$anonfun$$$outer()
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + inner classes: 1
+19/03/17 16:58:10 DEBUG ClosureCleaner:      org.apache.spark.rdd.RDD$$anonfun$collect$1$$anonfun$13
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outer classes: 1
+19/03/17 16:58:10 DEBUG ClosureCleaner:      org.apache.spark.rdd.RDD
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outer objects: 1
+19/03/17 16:58:10 DEBUG ClosureCleaner:      PythonRDD[1] at RDD at PythonRDD.scala:48
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + fields accessed by starting closure: 4
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class org.apache.spark.rdd.RDD$$anonfun$collect$1,Set($outer))
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class org.apache.spark.rdd.RDD,Set(org$apache$spark$rdd$RDD$$evidence$1))
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class scala.runtime.AbstractFunction0,Set())
+19/03/17 16:58:10 DEBUG ClosureCleaner:      (class java.lang.Object,Set())
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outermost object is not a closure or REPL line object, so do not clone it: (class org.apache.spark.rdd.RDD,PythonRDD[1] at RDD at PythonRDD.scala:48)
+19/03/17 16:58:10 DEBUG ClosureCleaner:  +++ closure <function0> (org.apache.spark.rdd.RDD$$anonfun$collect$1) is now cleaned +++
+19/03/17 16:58:10 DEBUG ClosureCleaner:  +++ closure <function1> (org.apache.spark.rdd.RDD$$anonfun$collect$1$$anonfun$13) is now cleaned +++
+19/03/17 16:58:10 DEBUG ClosureCleaner: +++ Cleaning closure <function2> (org.apache.spark.SparkContext$$anonfun$runJob$5) +++
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + declared fields: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public static final long org.apache.spark.SparkContext$$anonfun$runJob$5.serialVersionUID
+19/03/17 16:58:10 DEBUG ClosureCleaner:      private final scala.Function1 org.apache.spark.SparkContext$$anonfun$runJob$5.cleanedFunc$1
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + declared methods: 2
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.SparkContext$$anonfun$runJob$5.apply(java.lang.Object,java.lang.Object)
+19/03/17 16:58:10 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.SparkContext$$anonfun$runJob$5.apply(org.apache.spark.TaskContext,scala.collection.Iterator)
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + inner classes: 0
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outer classes: 0
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + outer objects: 0
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + populating accessed fields because this is the starting closure
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + fields accessed by starting closure: 0
+19/03/17 16:58:10 DEBUG ClosureCleaner:  + there are no enclosing objects!
+19/03/17 16:58:10 DEBUG ClosureCleaner:  +++ closure <function2> (org.apache.spark.SparkContext$$anonfun$runJob$5) is now cleaned +++
+19/03/17 16:58:10 INFO SparkContext: Starting job: collect at /Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py:141
+19/03/17 16:58:10 INFO DAGScheduler: Got job 0 (collect at /Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py:141) with 4 output partitions
+19/03/17 16:58:10 INFO DAGScheduler: Final stage: ResultStage 0 (collect at /Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py:141)
+19/03/17 16:58:10 INFO DAGScheduler: Parents of final stage: List()
+19/03/17 16:58:10 INFO DAGScheduler: Missing parents: List()
+19/03/17 16:58:10 DEBUG DAGScheduler: submitStage(ResultStage 0)
+19/03/17 16:58:10 DEBUG DAGScheduler: missing: List()
+19/03/17 16:58:10 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at RDD at PythonRDD.scala:48), which has no missing parents
+19/03/17 16:58:10 DEBUG DAGScheduler: submitMissingTasks(ResultStage 0)
+19/03/17 16:58:10 TRACE BlockInfoManager: Task -1024 trying to put broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_5
+19/03/17 16:58:11 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 5.6 KB, free 362.7 MB)
+19/03/17 16:58:11 DEBUG BlockManager: Put block broadcast_5 locally took  1 ms
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_5
+19/03/17 16:58:11 DEBUG BlockManager: Putting block broadcast_5 without replication took  2 ms
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 trying to put broadcast_5_piece0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_5_piece0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_5_piece0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_5_piece0
+19/03/17 16:58:11 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 3.7 KB, free 362.7 MB)
+19/03/17 16:58:11 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.11.174.235:58621 (size: 3.7 KB, free: 362.7 MB)
+19/03/17 16:58:11 DEBUG BlockManagerMaster: Updated info of block broadcast_5_piece0
+19/03/17 16:58:11 DEBUG BlockManager: Told master about block broadcast_5_piece0
+19/03/17 16:58:11 DEBUG BlockManager: Put block broadcast_5_piece0 locally took  2 ms
+19/03/17 16:58:11 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_5_piece0
+19/03/17 16:58:11 DEBUG BlockManager: Putting block broadcast_5_piece0 without replication took  2 ms
+19/03/17 16:58:11 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1006
+19/03/17 16:58:11 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at RDD at PythonRDD.scala:48) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+19/03/17 16:58:11 INFO TaskSchedulerImpl: Adding task set 0.0 with 4 tasks
+19/03/17 16:58:11 DEBUG TaskSetManager: Epoch for TaskSet 0.0: 0
+19/03/17 16:58:11 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+19/03/17 16:58:11 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_0.0, runningTasks: 0
+19/03/17 16:58:11 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+19/03/17 16:58:11 WARN TaskSetManager: Stage 0 contains a task of very large size (2946 KB). The maximum recommended task size is 100 KB.
+19/03/17 16:58:11 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 3017071 bytes)
+19/03/17 16:58:11 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 3096341 bytes)
+19/03/17 16:58:11 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, executor driver, partition 2, PROCESS_LOCAL, 3096341 bytes)
+19/03/17 16:58:11 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, localhost, executor driver, partition 3, PROCESS_LOCAL, 3071769 bytes)
+19/03/17 16:58:11 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+19/03/17 16:58:11 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+19/03/17 16:58:11 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+19/03/17 16:58:11 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+19/03/17 16:58:11 INFO Executor: Fetching file:/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py with timestamp 1552813086941
+19/03/17 16:58:11 INFO Utils: /Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py has been previously copied to /private/var/folders/py/0btw6y997bb5_pftfpfd89x40000gn/T/spark-8f83e36e-42af-45a1-9fb7-0ae32f94cbd4/userFiles-ce8155ac-698f-470e-a37b-51d07a77c97e/als_spark.py
+19/03/17 16:58:11 DEBUG Executor: Task 0's epoch is 0
+19/03/17 16:58:11 DEBUG Executor: Task 2's epoch is 0
+19/03/17 16:58:11 DEBUG Executor: Task 1's epoch is 0
+19/03/17 16:58:11 DEBUG Executor: Task 3's epoch is 0
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired read lock for broadcast_5
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_5 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired read lock for broadcast_5
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_5 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired read lock for broadcast_5
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_5 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for broadcast_5
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired read lock for broadcast_5
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_5 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_1_1
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_1_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for rdd_1_1
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_1_3
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_1_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for rdd_1_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for rdd_1_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for rdd_1_3
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_3 was not found
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_2 was not found
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_1 was not found
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_0 was not found
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_1_2
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_1_0
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_1_3
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_1_1
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_2 not found
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_1 not found
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_3 not found
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_1_0 not found
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to put rdd_1_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for rdd_1_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire write lock for rdd_1_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired write lock for rdd_1_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to put rdd_1_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for rdd_1_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire write lock for rdd_1_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired write lock for rdd_1_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to put rdd_1_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for rdd_1_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire write lock for rdd_1_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired write lock for rdd_1_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to put rdd_1_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for rdd_1_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire write lock for rdd_1_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired write lock for rdd_1_2
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_1
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_0 was not found
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for rdd_0_2
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_2 was not found
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_0_2
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_3 was not found
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_0 not found
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for rdd_0_1
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_2 not found
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to put rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_1 was not found
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_3 not found
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Getting remote block rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire write lock for rdd_0_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired write lock for rdd_0_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to put rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Block rdd_0_1 not found
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire write lock for rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired write lock for rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to put rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire write lock for rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired write lock for rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to put rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire write lock for rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired write lock for rdd_0_1
+19/03/17 16:58:11 INFO MemoryStore: Block rdd_0_0 stored as bytes in memory (estimated size 1944.5 KB, free 360.8 MB)
+19/03/17 16:58:11 INFO BlockManagerInfo: Added rdd_0_0 in memory on 10.11.174.235:58621 (size: 1944.5 KB, free: 360.8 MB)
+19/03/17 16:58:11 DEBUG BlockManagerMaster: Updated info of block rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Told master about block rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Put block rdd_0_0 locally took  121 ms
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 downgrading write lock for rdd_0_0
+19/03/17 16:58:11 INFO MemoryStore: Block rdd_0_2 stored as bytes in memory (estimated size 1998.0 KB, free 358.8 MB)
+19/03/17 16:58:11 INFO MemoryStore: Block rdd_0_1 stored as bytes in memory (estimated size 1997.6 KB, free 356.9 MB)
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 releasing lock for rdd_0_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for rdd_0_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired read lock for rdd_0_0
+19/03/17 16:58:11 INFO BlockManagerInfo: Added rdd_0_2 in memory on 10.11.174.235:58621 (size: 1998.0 KB, free: 358.8 MB)
+19/03/17 16:58:11 DEBUG BlockManager: Putting block rdd_0_0 without replication took  122 ms
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManagerMaster: Updated info of block rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for rdd_0_0
+19/03/17 16:58:11 DEBUG BlockManager: Told master about block rdd_0_2
+19/03/17 16:58:11 DEBUG BlockManager: Put block rdd_0_2 locally took  122 ms
+19/03/17 16:58:11 INFO BlockManagerInfo: Added rdd_0_1 in memory on 10.11.174.235:58621 (size: 1997.6 KB, free: 356.9 MB)
+19/03/17 16:58:11 DEBUG BlockManagerMaster: Updated info of block rdd_0_1
+19/03/17 16:58:11 DEBUG BlockManager: Told master about block rdd_0_1
+19/03/17 16:58:11 DEBUG BlockManager: Put block rdd_0_1 locally took  121 ms
+19/03/17 16:58:11 INFO MemoryStore: Block rdd_0_3 stored as bytes in memory (estimated size 1982.3 KB, free 354.9 MB)
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired read lock for rdd_0_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 downgrading write lock for rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 releasing lock for rdd_0_1
+19/03/17 16:58:11 DEBUG BlockManager: Level for block rdd_0_0 is StorageLevel(memory, 1 replicas)
+19/03/17 16:58:11 INFO BlockManagerInfo: Added rdd_0_3 in memory on 10.11.174.235:58621 (size: 1982.3 KB, free: 354.9 MB)
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired read lock for rdd_0_1
+19/03/17 16:58:11 DEBUG BlockManagerMaster: Updated info of block rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Putting block rdd_0_1 without replication took  122 ms
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 downgrading write lock for rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 releasing lock for rdd_0_2
+19/03/17 16:58:11 DEBUG BlockManager: Told master about block rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for rdd_0_2
+19/03/17 16:58:11 DEBUG BlockManager: Put block rdd_0_3 locally took  124 ms
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired read lock for rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired read lock for rdd_0_1
+19/03/17 16:58:11 DEBUG BlockManager: Putting block rdd_0_2 without replication took  124 ms
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 downgrading write lock for rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Level for block rdd_0_1 is StorageLevel(memory, 1 replicas)
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 releasing lock for rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired read lock for rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for rdd_0_2
+19/03/17 16:58:11 DEBUG BlockManager: Putting block rdd_0_3 without replication took  124 ms
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired read lock for rdd_0_2
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block rdd_0_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Level for block rdd_0_2 is StorageLevel(memory, 1 replicas)
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired read lock for rdd_0_3
+19/03/17 16:58:11 DEBUG BlockManager: Level for block rdd_0_3 is StorageLevel(memory, 1 replicas)
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 releasing lock for rdd_0_1
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 releasing lock for rdd_0_2
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 releasing lock for rdd_0_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 releasing lock for rdd_0_3
+[Stage 0:>                                                          (0 + 4) / 4]19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired read lock for broadcast_4
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_4 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired read lock for broadcast_4
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_4 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired read lock for broadcast_3
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_3 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired read lock for broadcast_3
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_3 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 trying to acquire read lock for broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 1 acquired read lock for broadcast_0
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 trying to acquire read lock for broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 0 acquired read lock for broadcast_0
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired read lock for broadcast_4
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_4 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired read lock for broadcast_3
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_3 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 trying to acquire read lock for broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 3 acquired read lock for broadcast_0
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for broadcast_4
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired read lock for broadcast_4
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_4 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for broadcast_3
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired read lock for broadcast_3
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_3 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:58:11 DEBUG BlockManager: Getting local block broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 trying to acquire read lock for broadcast_0
+19/03/17 16:58:11 TRACE BlockInfoManager: Task 2 acquired read lock for broadcast_0
+19/03/17 16:58:11 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+19/03/17 16:59:06 TRACE HeartbeatReceiver: Checking for hosts with no recent heartbeats in HeartbeatReceiver.
+[Stage 0:>                                                          (0 + 4) / 4]19/03/17 17:00:06 TRACE HeartbeatReceiver: Checking for hosts with no recent heartbeats in HeartbeatReceiver.
+[Stage 0:>                                                          (0 + 4) / 4]19/03/17 17:01:06 TRACE HeartbeatReceiver: Checking for hosts with no recent heartbeats in HeartbeatReceiver.
+[Stage 0:>                                                          (0 + 4) / 4]^C19/03/17 17:01:45 INFO SparkContext: Invoking stop() from shutdown hook
+Iteration #1: Traceback (most recent call last):
+  File "/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py", line 141, in <module>
+    U = U.collect().cache()
+  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/rdd.py", line 809, in collect
+19/03/17 17:01:45 INFO TaskSchedulerImpl: Cancelling stage 0
+  File "/usr/local/spark/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 1131, in __call__
+  File "/usr/local/spark/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 883, in send_command
+  File "/usr/local/spark/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 1028, in send_command
+  File "/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 586, in readinto
+19/03/17 17:01:45 INFO Executor: Executor is trying to kill task 0.0 in stage 0.0 (TID 0), reason: stage cancelled
+19/03/17 17:01:45 INFO Executor: Executor is trying to kill task 1.0 in stage 0.0 (TID 1), reason: stage cancelled
+19/03/17 17:01:45 INFO Executor: Executor is trying to kill task 2.0 in stage 0.0 (TID 2), reason: stage cancelled
+19/03/17 17:01:45 INFO Executor: Executor is trying to kill task 3.0 in stage 0.0 (TID 3), reason: stage cancelled
+19/03/17 17:01:45 INFO TaskSchedulerImpl: Stage 0 was cancelled
+19/03/17 17:01:45 INFO DAGScheduler: ResultStage 0 (collect at /Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py:141) failed in 214.459 s due to Job 0 cancelled as part of cancellation of all jobs
+19/03/17 17:01:45 DEBUG DAGScheduler: After removal of stage 0, remaining stages = 0
+19/03/17 17:01:45 INFO DAGScheduler: Job 0 failed: collect at /Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py:141, took 214.533965 s
+    return self._sock.recv_into(b)
+  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 237, in signal_handler
+KeyboardInterrupt
+19/03/17 17:01:45 INFO SparkUI: Stopped Spark web UI at http://10.11.174.235:4040
+19/03/17 17:01:45 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task completion (likely due to cleanup)
+java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at org.apache.spark.api.python.PythonRDD$.org$apache$spark$api$python$PythonRDD$$write$1(PythonRDD.scala:506)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:333)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1948)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task interruption
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:156)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:152)
+	at org.apache.spark.InterruptibleIterator.next(InterruptibleIterator.scala:40)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsBytes(MemoryStore.scala:372)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1055)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:969)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:760)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:108)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task completion (likely due to cleanup)
+java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at org.apache.spark.api.python.PythonRDD$.org$apache$spark$api$python$PythonRDD$$write$1(PythonRDD.scala:506)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:333)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1948)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+19/03/17 17:01:45 INFO MemoryStore: MemoryStore cleared
+19/03/17 17:01:45 WARN BlockManager: Putting block rdd_1_2 failed due to an exception
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task completion (likely due to cleanup)
+java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at org.apache.spark.api.python.PythonRDD$.org$apache$spark$api$python$PythonRDD$$write$1(PythonRDD.scala:506)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:333)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1948)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task interruption
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:156)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:152)
+	at org.apache.spark.InterruptibleIterator.next(InterruptibleIterator.scala:40)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsBytes(MemoryStore.scala:372)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1055)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:969)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:760)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:108)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task interruption
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:156)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:152)
+	at org.apache.spark.InterruptibleIterator.next(InterruptibleIterator.scala:40)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsBytes(MemoryStore.scala:372)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1055)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:969)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:760)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:108)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task completion (likely due to cleanup)
+java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at org.apache.spark.api.python.PythonRDD$.org$apache$spark$api$python$PythonRDD$$write$1(PythonRDD.scala:506)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRDD$$anonfun$writeIteratorToStream$1.apply(PythonRDD.scala:518)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:518)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:333)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1948)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+19/03/17 17:01:45 DEBUG PythonRunner: Exception thrown after task interruption
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:156)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.next(PythonRDD.scala:152)
+	at org.apache.spark.InterruptibleIterator.next(InterruptibleIterator.scala:40)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsBytes(MemoryStore.scala:372)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1055)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:969)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1029)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:760)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:108)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 2 releasing lock for broadcast_0
+19/03/17 17:01:45 WARN BlockManager: Putting block rdd_1_1 failed due to an exception
+19/03/17 17:01:45 WARN BlockManager: Putting block rdd_1_3 failed due to an exception
+19/03/17 17:01:45 INFO BlockManager: BlockManager stopped
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 1 releasing lock for broadcast_0
+19/03/17 17:01:45 WARN BlockManager: Putting block rdd_1_0 failed due to an exception
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_0 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 3 releasing lock for broadcast_0
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_0 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 1 releasing lock for broadcast_3
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_0 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 WARN BlockManager: Block rdd_1_0 could not be removed as it was not found on disk or in memory
+19/03/17 17:01:45 INFO BlockManagerMaster: BlockManagerMaster stopped
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 2 releasing lock for broadcast_3
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_3 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 0 trying to remove block rdd_1_0
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_3 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 0 releasing lock for broadcast_0
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_0 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 3 releasing lock for broadcast_3
+19/03/17 17:01:45 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 0 releasing lock for broadcast_3
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_3 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 2 releasing lock for broadcast_4
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_4 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_3 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 1 releasing lock for broadcast_4
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_4 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 0 releasing lock for broadcast_4
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_4 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 2 releasing lock for broadcast_5
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_5 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 3 releasing lock for broadcast_4
+19/03/17 17:01:45 INFO SparkContext: Successfully stopped SparkContext
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_4 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 INFO ShutdownHookManager: Shutdown hook called
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 0 releasing lock for broadcast_5
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_5 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 ERROR Utils: Uncaught exception in thread Executor task launch worker for task 0
+java.lang.NullPointerException
+	at org.apache.spark.scheduler.Task$$anonfun$run$1.apply$mcV$sp(Task.scala:129)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1317)
+	at org.apache.spark.scheduler.Task.run(Task.scala:127)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 TRACE BlockInfoManager: Task 1 releasing lock for broadcast_5
+19/03/17 17:01:45 ERROR Utils: Uncaught exception in thread Executor task launch worker for task 2
+java.lang.NullPointerException
+	at org.apache.spark.scheduler.Task$$anonfun$run$1.apply$mcV$sp(Task.scala:129)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1317)
+	at org.apache.spark.scheduler.Task.run(Task.scala:127)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 ERROR TaskContextImpl: Error in TaskCompletionListener
+java.lang.IllegalStateException: Block broadcast_5 not found
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$2.apply(BlockInfoManager.scala:293)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:292)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:720)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$releaseLock$1.apply(TorrentBroadcast.scala:250)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:128)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:117)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:130)
+	at org.apache.spark.TaskContextImpl$$anonfun$invokeListeners$1.apply(TaskContextImpl.scala:128)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:128)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:116)
+	at org.apache.spark.scheduler.Task.run(Task.scala:118)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 INFO ShutdownHookManager: Deleting directory /private/var/folders/py/0btw6y997bb5_pftfpfd89x40000gn/T/spark-8f83e36e-42af-45a1-9fb7-0ae32f94cbd4/pyspark-581df8f6-5cbd-44b3-aead-b9c44d9e6d0f
+19/03/17 17:01:45 ERROR Utils: Uncaught exception in thread Executor task launch worker for task 1
+java.lang.NullPointerException
+	at org.apache.spark.scheduler.Task$$anonfun$run$1.apply$mcV$sp(Task.scala:129)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1317)
+	at org.apache.spark.scheduler.Task.run(Task.scala:127)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+19/03/17 17:01:45 INFO ShutdownHookManager: Deleting directory /private/var/folders/py/0btw6y997bb5_pftfpfd89x40000gn/T/spark-8f83e36e-42af-45a1-9fb7-0ae32f94cbd4
+[LeLe@Jeremys-MacBook-Pro src]$ 

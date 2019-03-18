@@ -39,13 +39,11 @@ spark = 0
 def init():
 	global sc
 	sc = SparkContext()
-	sc.setLogLevel("ALL")
-	sc.addPyFile("/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/load.py")
 	spark = SparkSession(sc)
 	# clear model from last time
 	# os.system("hdfs dfs -rm -R /NMF/model/my_model")
 def test_func(row):
-	return row + 100
+	return row + 1
 
 def update_M(col):
 	# gather broadcast variables
@@ -98,7 +96,7 @@ init()
 Nf = 2
 N_iter = 100
 
-input = "/Users/LeLe/Documents/Sem7/FYP/code/NMF/Data/netflix_data/my_data_30_sorted.txt"
+input = "../Data/netflix_data/my_data_30_sorted.txt"
 R_sparse_column, R_sparse_row = load_as_sparse(input)
 row_nonzero_count = column_nonzero_count = []
 for i in range(len(R_sparse_column[1])):
@@ -132,36 +130,13 @@ R_dense = load(input)
 no_nonzero = np.count_nonzero(R_dense)
 last_err = 0
 current_err = 0
-
-print(np.array(U).shape)
-M = sc.broadcast(np.array(M))
 for i in range(N_iter):
-	print("Iteration #" + str(i + 1) + ": ", end = "")
-	U = sc.parallelize(U, numSlices=2000)
-	U = U.map(update_U)
-	U = U.collect()
-
-exit(0)
-
-U = sc.broadcast(np.array(U))
-# print("1")
-for i in range(N_iter):
-	print("Iteration #" + str(i + 1) + ": ", end = "")
-	M = sc.parallelize(M).cache()
-	M = M.map(update_M).cache()
-	M = M.collect().cache()
-
-	
-
-
-exit(0)
-for i in range(N_iter):
-	print("Iteration #" + str(i + 1) + ": ", end = "")
+	print("Iteration #" + str(i + 1) + ": ", end="")
 	U = sc.broadcast(np.array(U))
 	# print("1")
 	M = sc.parallelize(M)
 	# print("2")
-	M = M.map(update_M).cache()
+	M = M.map(update_M)
 	# print("3")
 	M = M.collect()
 	# print("4")
@@ -169,7 +144,7 @@ for i in range(N_iter):
 	# print("5")
 	U = sc.parallelize(U.value)
 	# print("6")
-	U = U.map(update_U).cache()
+	U = U.map(update_U)
 	# print("7")
 	U = U.collect()
 	# print("8")

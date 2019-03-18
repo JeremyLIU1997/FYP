@@ -4,7 +4,6 @@
 # into binary for faster loading
 
 # imports
-from tqdm import tqdm
 import sys
 import numpy as np
 
@@ -148,7 +147,7 @@ def extract_from_sparse(ar_sparse, indices, option):
 
 if __name__ == '__main__':
 	# load(input)
-	input = "../Data/netflix_data/my_data_3_sorted.txt"
+	input = "../Data/netflix_data/my_data_30_sorted.txt"
 	# print("By column nonzero: " + str(np.count_nonzero(R,axis=0)))
 	# print("By row nonzero: " + str(np.count_nonzero(R,axis=1)))
 	R_sparse_column, R_sparse_row = load_as_sparse(input)

@@ -1,0 +1,594 @@
+[hadoop@ip-172-31-2-30 application_1552908508995_0001]$ cat ip-172-31-1-89.ap-northeast-1.compute.internal_8041
+??h??׶9?A@???P	VERSIONAPPLICATION_ACL(
+MODIFY_APPhadoopVIEW_APPhadoop APPLICATION_OWNEhadoop(&container_1552908508995_0001_01_000005?"?stderr4565SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt1/yarn/usercache/hadoop/filecache/11/__spark_libs__3432576122783568761.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/03/18 11:33:49 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 9671@ip-172-31-1-89
+19/03/18 11:33:49 INFO SignalUtils: Registered signal handler for TERM
+19/03/18 11:33:49 INFO SignalUtils: Registered signal handler for HUP
+19/03/18 11:33:49 INFO SignalUtils: Registered signal handler for INT
+19/03/18 11:33:50 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:33:50 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:33:50 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:33:50 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:33:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:33:51 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:39063 after 148 ms (0 ms spent in bootstraps)
+19/03/18 11:33:51 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:33:51 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:33:51 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:33:51 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:33:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:33:51 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:39063 after 3 ms (0 ms spent in bootstraps)
+19/03/18 11:33:52 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-10025408-9e32-42fa-b50d-79634c0cc5c7
+19/03/18 11:33:52 INFO DiskBlockManager: Created local directory at /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-f55e91e7-cc4f-4b49-9e8a-ac8ce21d249c
+19/03/18 11:33:52 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+19/03/18 11:33:52 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-1-89.ap-northeast-1.compute.internal:39063
+19/03/18 11:33:52 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/03/18 11:33:52 INFO Executor: Starting executor ID 4 on host ip-172-31-1-89.ap-northeast-1.compute.internal
+19/03/18 11:33:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44581.
+19/03/18 11:33:52 INFO NettyBlockTransferService: Server created on ip-172-31-1-89.ap-northeast-1.compute.internal:44581
+19/03/18 11:33:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/03/18 11:33:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(4, ip-172-31-1-89.ap-northeast-1.compute.internal, 44581, None)
+19/03/18 11:33:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(4, ip-172-31-1-89.ap-northeast-1.compute.internal, 44581, None)
+19/03/18 11:33:52 INFO BlockManager: external shuffle service port = 7337
+19/03/18 11:33:52 INFO BlockManager: Registering executor with local external shuffle service.
+19/03/18 11:33:52 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:7337 after 6 ms (0 ms spent in bootstraps)
+19/03/18 11:33:53 INFO BlockManager: Initialized BlockManager: BlockManagerId(4, ip-172-31-1-89.ap-northeast-1.compute.internal, 44581, None)
+19/03/18 11:34:13 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+19/03/18 11:34:13 INFO MemoryStore: MemoryStore cleared
+19/03/18 11:34:13 INFO BlockManager: BlockManager stopped
+19/03/18 11:34:13 INFO ShutdownHookManager: Shutdown hook called
+stdout42392019-03-18T11:33:49.029+0000: [GC (Allocation Failure) 2019-03-18T11:33:49.030+0000: [ParNew: 64512K->6666K(72512K), 0.0264211 secs] 64512K->6666K(233664K), 0.0265301 secs] [Times: user=0.02 sys=0.01, real=0.03 secs] 
+2019-03-18T11:33:49.559+0000: [GC (Allocation Failure) 2019-03-18T11:33:49.559+0000: [ParNew: 71178K->4442K(72512K), 0.0474317 secs] 71178K->6815K(233664K), 0.0475049 secs] [Times: user=0.09 sys=0.01, real=0.04 secs] 
+2019-03-18T11:33:50.216+0000: [GC (Allocation Failure) 2019-03-18T11:33:50.216+0000: [ParNew: 68954K->3197K(72512K), 0.0123081 secs] 71327K->5570K(233664K), 0.0123916 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2019-03-18T11:33:50.900+0000: [GC (Allocation Failure) 2019-03-18T11:33:50.900+0000: [ParNew: 67709K->3625K(72512K), 0.0082995 secs] 70082K->5998K(233664K), 0.0083841 secs] [Times: user=0.02 sys=0.00, real=0.00 secs] 
+2019-03-18T11:33:51.259+0000: [GC (Allocation Failure) 2019-03-18T11:33:51.260+0000: [ParNew: 68137K->5179K(72512K), 0.0063646 secs] 70510K->7552K(233664K), 0.0064567 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2019-03-18T11:33:51.632+0000: [GC (Allocation Failure) 2019-03-18T11:33:51.632+0000: [ParNew: 69691K->5038K(72512K), 0.0382971 secs] 72064K->24565K(233664K), 0.0383748 secs] [Times: user=0.08 sys=0.01, real=0.04 secs] 
+2019-03-18T11:33:51.671+0000: [GC (CMS Initial Mark) [1 CMS-initial-mark: 19527K(161152K)] 25477K(233664K), 0.0073172 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+2019-03-18T11:33:51.679+0000: [CMS-concurrent-mark-start]
+2019-03-18T11:33:51.717+0000: [CMS-concurrent-mark: 0.038/0.038 secs] [Times: user=0.08 sys=0.01, real=0.03 secs] 
+2019-03-18T11:33:51.717+0000: [CMS-concurrent-preclean-start]
+2019-03-18T11:33:51.718+0000: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2019-03-18T11:33:51.718+0000: [CMS-concurrent-abortable-preclean-start]
+2019-03-18T11:33:52.015+0000: [CMS-concurrent-abortable-preclean: 0.089/0.297 secs] [Times: user=0.64 sys=0.03, real=0.30 secs] 
+2019-03-18T11:33:52.015+0000: [GC (CMS Final Remark) [YG occupancy: 49504 K (72512 K)]2019-03-18T11:33:52.015+0000: [Rescan (parallel) , 0.0081611 secs]2019-03-18T11:33:52.024+0000: [weak refs processing, 0.0000563 secs]2019-03-18T11:33:52.024+0000: [class unloading, 0.0035110 secs]2019-03-18T11:33:52.027+0000: [scrub symbol table, 0.0039068 secs]2019-03-18T11:33:52.031+0000: [scrub string table, 0.0003927 secs][1 CMS-remark: 19527K(161152K)] 69031K(233664K), 0.0167429 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+2019-03-18T11:33:52.032+0000: [CMS-concurrent-sweep-start]
+2019-03-18T11:33:52.034+0000: [CMS-concurrent-sweep: 0.002/0.002 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2019-03-18T11:33:52.034+0000: [CMS-concurrent-reset-start]
+2019-03-18T11:33:52.124+0000: [CMS-concurrent-reset: 0.085/0.090 secs] [Times: user=0.08 sys=0.06, real=0.09 secs] 
+2019-03-18T11:33:52.192+0000: [GC (Allocation Failure) 2019-03-18T11:33:52.192+0000: [ParNew: 69550K->5907K(72512K), 0.0166594 secs] 89063K->41804K(233664K), 0.0167242 secs] [Times: user=0.05 sys=0.01, real=0.01 secs] 
+2019-03-18T11:33:52.456+0000: [GC (Allocation Failure) 2019-03-18T11:33:52.456+0000: [ParNew: 70419K->6186K(72512K), 0.0083746 secs] 106316K->42082K(233664K), 0.0084540 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:13.687+0000: [GC (Allocation Failure) 2019-03-18T11:34:13.687+0000: [ParNew: 70698K->5125K(72512K), 0.0384481 secs] 106594K->59266K(233664K), 0.0385327 secs] [Times: user=0.07 sys=0.01, real=0.04 secs] 
+Heap
+ par new generation   total 72512K, used 7387K [0x0000000080000000, 0x0000000084ea0000, 0x0000000094cc0000)
+  eden space 64512K,   3% used [0x0000000080000000, 0x0000000080235668, 0x0000000083f00000)
+  from space 8000K,  64% used [0x00000000846d0000, 0x0000000084bd15d8, 0x0000000084ea0000)
+  to   space 8000K,   0% used [0x0000000083f00000, 0x0000000083f00000, 0x00000000846d0000)
+ concurrent mark-sweep generation total 161152K, used 54140K [0x0000000094cc0000, 0x000000009ea20000, 0x0000000100000000)
+ Metaspace       used 27504K, capacity 27790K, committed 28184K, reserved 1073152K
+  class space    used 3684K, capacity 3779K, committed 3864K, reserved 1048576K
+(&container_1552908508995_0001_02_000006?"?stderr4572SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt1/yarn/usercache/hadoop/filecache/11/__spark_libs__3432576122783568761.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/03/18 11:34:27 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 9924@ip-172-31-1-89
+19/03/18 11:34:27 INFO SignalUtils: Registered signal handler for TERM
+19/03/18 11:34:27 INFO SignalUtils: Registered signal handler for HUP
+19/03/18 11:34:27 INFO SignalUtils: Registered signal handler for INT
+19/03/18 11:34:29 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:29 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:29 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:29 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:30 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 218 ms (0 ms spent in bootstraps)
+19/03/18 11:34:31 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:31 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:31 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:31 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:31 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 27 ms (0 ms spent in bootstraps)
+19/03/18 11:34:31 INFO DiskBlockManager: Created local directory at /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-93e4ab0f-e513-457e-90e6-0c03ed4a1639
+19/03/18 11:34:31 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-ac99a7a0-db52-42fb-a039-99ba2e2aafec
+19/03/18 11:34:31 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+19/03/18 11:34:32 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-2-244.ap-northeast-1.compute.internal:43315
+19/03/18 11:34:32 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/03/18 11:34:32 INFO Executor: Starting executor ID 5 on host ip-172-31-1-89.ap-northeast-1.compute.internal
+19/03/18 11:34:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39583.
+19/03/18 11:34:32 INFO NettyBlockTransferService: Server created on ip-172-31-1-89.ap-northeast-1.compute.internal:39583
+19/03/18 11:34:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/03/18 11:34:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(5, ip-172-31-1-89.ap-northeast-1.compute.internal, 39583, None)
+19/03/18 11:34:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(5, ip-172-31-1-89.ap-northeast-1.compute.internal, 39583, None)
+19/03/18 11:34:33 INFO BlockManager: external shuffle service port = 7337
+19/03/18 11:34:33 INFO BlockManager: Registering executor with local external shuffle service.
+19/03/18 11:34:33 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:7337 after 35 ms (0 ms spent in bootstraps)
+19/03/18 11:34:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(5, ip-172-31-1-89.ap-northeast-1.compute.internal, 39583, None)
+19/03/18 11:34:51 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+19/03/18 11:34:51 INFO MemoryStore: MemoryStore cleared
+19/03/18 11:34:51 INFO BlockManager: BlockManager stopped
+19/03/18 11:34:51 INFO ShutdownHookManager: Shutdown hook called
+stdout42392019-03-18T11:34:27.351+0000: [GC (Allocation Failure) 2019-03-18T11:34:27.351+0000: [ParNew: 64512K->6659K(72512K), 0.0088868 secs] 64512K->6659K(233664K), 0.0089778 secs] [Times: user=0.02 sys=0.01, real=0.01 secs] 
+2019-03-18T11:34:28.012+0000: [GC (Allocation Failure) 2019-03-18T11:34:28.012+0000: [ParNew: 71171K->3899K(72512K), 0.0312693 secs] 71171K->6272K(233664K), 0.0313524 secs] [Times: user=0.04 sys=0.00, real=0.03 secs] 
+2019-03-18T11:34:28.908+0000: [GC (Allocation Failure) 2019-03-18T11:34:28.908+0000: [ParNew: 68411K->2994K(72512K), 0.0068518 secs] 70784K->5367K(233664K), 0.0069397 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:29.979+0000: [GC (Allocation Failure) 2019-03-18T11:34:29.979+0000: [ParNew: 67506K->3620K(72512K), 0.0155542 secs] 69879K->5993K(233664K), 0.0156328 secs] [Times: user=0.03 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:30.715+0000: [GC (Allocation Failure) 2019-03-18T11:34:30.715+0000: [ParNew: 68132K->5167K(72512K), 0.0076270 secs] 70505K->7539K(233664K), 0.0077115 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:31.234+0000: [GC (Allocation Failure) 2019-03-18T11:34:31.234+0000: [ParNew: 69679K->4419K(72512K), 0.0488553 secs] 72051K->24019K(233664K), 0.0489352 secs] [Times: user=0.08 sys=0.01, real=0.05 secs] 
+2019-03-18T11:34:31.295+0000: [GC (CMS Initial Mark) [1 CMS-initial-mark: 19600K(161152K)] 25812K(233664K), 0.0109994 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:31.306+0000: [CMS-concurrent-mark-start]
+2019-03-18T11:34:31.342+0000: [CMS-concurrent-mark: 0.030/0.036 secs] [Times: user=0.05 sys=0.00, real=0.04 secs] 
+2019-03-18T11:34:31.344+0000: [CMS-concurrent-preclean-start]
+2019-03-18T11:34:31.345+0000: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:31.345+0000: [CMS-concurrent-abortable-preclean-start]
+2019-03-18T11:34:31.618+0000: [CMS-concurrent-abortable-preclean: 0.114/0.273 secs] [Times: user=0.37 sys=0.00, real=0.27 secs] 
+2019-03-18T11:34:31.626+0000: [GC (CMS Final Remark) [YG occupancy: 38502 K (72512 K)]2019-03-18T11:34:31.627+0000: [Rescan (parallel) , 0.0065790 secs]2019-03-18T11:34:31.633+0000: [weak refs processing, 0.0000514 secs]2019-03-18T11:34:31.633+0000: [class unloading, 0.0033280 secs]2019-03-18T11:34:31.637+0000: [scrub symbol table, 0.0037191 secs]2019-03-18T11:34:31.640+0000: [scrub string table, 0.0003811 secs][1 CMS-remark: 19600K(161152K)] 58102K(233664K), 0.0145890 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+2019-03-18T11:34:31.641+0000: [CMS-concurrent-sweep-start]
+2019-03-18T11:34:31.643+0000: [CMS-concurrent-sweep: 0.002/0.002 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:31.651+0000: [CMS-concurrent-reset-start]
+2019-03-18T11:34:31.760+0000: [CMS-concurrent-reset: 0.110/0.110 secs] [Times: user=0.12 sys=0.09, real=0.11 secs] 
+2019-03-18T11:34:31.943+0000: [GC (Allocation Failure) 2019-03-18T11:34:31.943+0000: [ParNew: 68931K->5266K(72512K), 0.0465648 secs] 88517K->41237K(233664K), 0.0466400 secs] [Times: user=0.08 sys=0.01, real=0.04 secs] 
+2019-03-18T11:34:32.385+0000: [GC (Allocation Failure) 2019-03-18T11:34:32.385+0000: [ParNew: 69778K->6509K(72512K), 0.0074891 secs] 105749K->42479K(233664K), 0.0075845 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:51.591+0000: [GC (Allocation Failure) 2019-03-18T11:34:51.591+0000: [ParNew: 71021K->5560K(72512K), 0.0584412 secs] 106991K->59667K(233664K), 0.0585152 secs] [Times: user=0.07 sys=0.01, real=0.05 secs] 
+Heap
+ par new generation   total 72512K, used 8228K [0x0000000080000000, 0x0000000084ea0000, 0x0000000094cc0000)
+  eden space 64512K,   4% used [0x0000000080000000, 0x000000008029af78, 0x0000000083f00000)
+  from space 8000K,  69% used [0x00000000846d0000, 0x0000000084c3e248, 0x0000000084ea0000)
+  to   space 8000K,   0% used [0x0000000083f00000, 0x0000000083f00000, 0x00000000846d0000)
+ concurrent mark-sweep generation total 161152K, used 54107K [0x0000000094cc0000, 0x000000009ea20000, 0x0000000100000000)
+ Metaspace       used 27501K, capacity 27790K, committed 28180K, reserved 1073152K
+  class space    used 3684K, capacity 3779K, committed 3864K, reserved 1048576K
+(&container_1552908508995_0001_01_000003?"?stderr4566SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt1/yarn/usercache/hadoop/filecache/11/__spark_libs__3432576122783568761.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/03/18 11:33:49 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 9674@ip-172-31-1-89
+19/03/18 11:33:49 INFO SignalUtils: Registered signal handler for TERM
+19/03/18 11:33:49 INFO SignalUtils: Registered signal handler for HUP
+19/03/18 11:33:49 INFO SignalUtils: Registered signal handler for INT
+19/03/18 11:33:50 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:33:50 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:33:50 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:33:50 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:33:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:33:51 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:39063 after 140 ms (0 ms spent in bootstraps)
+19/03/18 11:33:51 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:33:51 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:33:51 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:33:51 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:33:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:33:51 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:39063 after 3 ms (0 ms spent in bootstraps)
+19/03/18 11:33:51 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-9c382f39-b813-4cec-af9b-a3b352990121
+19/03/18 11:33:51 INFO DiskBlockManager: Created local directory at /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-fc8a5de4-3315-4d4c-a556-9a2f35254884
+19/03/18 11:33:51 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+19/03/18 11:33:52 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-1-89.ap-northeast-1.compute.internal:39063
+19/03/18 11:33:52 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/03/18 11:33:52 INFO Executor: Starting executor ID 2 on host ip-172-31-1-89.ap-northeast-1.compute.internal
+19/03/18 11:33:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39679.
+19/03/18 11:33:52 INFO NettyBlockTransferService: Server created on ip-172-31-1-89.ap-northeast-1.compute.internal:39679
+19/03/18 11:33:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/03/18 11:33:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(2, ip-172-31-1-89.ap-northeast-1.compute.internal, 39679, None)
+19/03/18 11:33:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(2, ip-172-31-1-89.ap-northeast-1.compute.internal, 39679, None)
+19/03/18 11:33:52 INFO BlockManager: external shuffle service port = 7337
+19/03/18 11:33:52 INFO BlockManager: Registering executor with local external shuffle service.
+19/03/18 11:33:52 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:7337 after 32 ms (0 ms spent in bootstraps)
+19/03/18 11:33:53 INFO BlockManager: Initialized BlockManager: BlockManagerId(2, ip-172-31-1-89.ap-northeast-1.compute.internal, 39679, None)
+19/03/18 11:34:13 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+19/03/18 11:34:13 INFO MemoryStore: MemoryStore cleared
+19/03/18 11:34:13 INFO BlockManager: BlockManager stopped
+19/03/18 11:34:13 INFO ShutdownHookManager: Shutdown hook called
+stdout42392019-03-18T11:33:48.988+0000: [GC (Allocation Failure) 2019-03-18T11:33:48.989+0000: [ParNew: 64512K->6665K(72512K), 0.0103947 secs] 64512K->6665K(233664K), 0.0104917 secs] [Times: user=0.01 sys=0.01, real=0.02 secs] 
+2019-03-18T11:33:49.513+0000: [GC (Allocation Failure) 2019-03-18T11:33:49.513+0000: [ParNew: 71177K->4476K(72512K), 0.0325887 secs] 71177K->6849K(233664K), 0.0326723 secs] [Times: user=0.07 sys=0.00, real=0.03 secs] 
+2019-03-18T11:33:50.099+0000: [GC (Allocation Failure) 2019-03-18T11:33:50.099+0000: [ParNew: 68988K->2962K(72512K), 0.0110537 secs] 71361K->5335K(233664K), 0.0111386 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2019-03-18T11:33:50.704+0000: [GC (Allocation Failure) 2019-03-18T11:33:50.704+0000: [ParNew: 67474K->3906K(72512K), 0.0169916 secs] 69847K->6279K(233664K), 0.0170732 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+2019-03-18T11:33:51.088+0000: [GC (Allocation Failure) 2019-03-18T11:33:51.088+0000: [ParNew: 68418K->5163K(72512K), 0.0060680 secs] 70791K->7536K(233664K), 0.0061405 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2019-03-18T11:33:51.549+0000: [GC (Allocation Failure) 2019-03-18T11:33:51.549+0000: [ParNew: 69675K->5648K(72512K), 0.0189519 secs] 72048K->25178K(233664K), 0.0190306 secs] [Times: user=0.06 sys=0.00, real=0.02 secs] 
+2019-03-18T11:33:51.568+0000: [GC (CMS Initial Mark) [1 CMS-initial-mark: 19530K(161152K)] 26076K(233664K), 0.0029723 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+2019-03-18T11:33:51.571+0000: [CMS-concurrent-mark-start]
+2019-03-18T11:33:51.595+0000: [CMS-concurrent-mark: 0.024/0.024 secs] [Times: user=0.07 sys=0.01, real=0.02 secs] 
+2019-03-18T11:33:51.595+0000: [CMS-concurrent-preclean-start]
+2019-03-18T11:33:51.596+0000: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2019-03-18T11:33:51.596+0000: [CMS-concurrent-abortable-preclean-start]
+2019-03-18T11:33:51.851+0000: [CMS-concurrent-abortable-preclean: 0.113/0.255 secs] [Times: user=0.41 sys=0.01, real=0.26 secs] 
+2019-03-18T11:33:51.852+0000: [GC (CMS Final Remark) [YG occupancy: 49680 K (72512 K)]2019-03-18T11:33:51.852+0000: [Rescan (parallel) , 0.0226062 secs]2019-03-18T11:33:51.874+0000: [weak refs processing, 0.0000520 secs]2019-03-18T11:33:51.875+0000: [class unloading, 0.0036171 secs]2019-03-18T11:33:51.878+0000: [scrub symbol table, 0.0040174 secs]2019-03-18T11:33:51.882+0000: [scrub string table, 0.0003953 secs][1 CMS-remark: 19530K(161152K)] 69210K(233664K), 0.0313429 secs] [Times: user=0.03 sys=0.01, real=0.03 secs] 
+2019-03-18T11:33:51.890+0000: [CMS-concurrent-sweep-start]
+2019-03-18T11:33:51.892+0000: [CMS-concurrent-sweep: 0.002/0.002 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+2019-03-18T11:33:51.892+0000: [CMS-concurrent-reset-start]
+2019-03-18T11:33:51.973+0000: [CMS-concurrent-reset: 0.081/0.081 secs] [Times: user=0.06 sys=0.05, real=0.08 secs] 
+2019-03-18T11:33:52.082+0000: [GC (Allocation Failure) 2019-03-18T11:33:52.082+0000: [ParNew: 70160K->4838K(72512K), 0.0292530 secs] 89676K->40738K(233664K), 0.0293461 secs] [Times: user=0.07 sys=0.02, real=0.03 secs] 
+2019-03-18T11:33:52.361+0000: [GC (Allocation Failure) 2019-03-18T11:33:52.361+0000: [ParNew: 69350K->6168K(72512K), 0.0070843 secs] 105250K->42068K(233664K), 0.0071758 secs] [Times: user=0.02 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:13.644+0000: [GC (Allocation Failure) 2019-03-18T11:34:13.644+0000: [ParNew: 70680K->4706K(72512K), 0.0222888 secs] 106580K->58845K(233664K), 0.0223505 secs] [Times: user=0.03 sys=0.01, real=0.02 secs] 
+Heap
+ par new generation   total 72512K, used 6697K [0x0000000080000000, 0x0000000084ea0000, 0x0000000094cc0000)
+  eden space 64512K,   3% used [0x0000000080000000, 0x00000000801f18a0, 0x0000000083f00000)
+  from space 8000K,  58% used [0x00000000846d0000, 0x0000000084b68b90, 0x0000000084ea0000)
+  to   space 8000K,   0% used [0x0000000083f00000, 0x0000000083f00000, 0x00000000846d0000)
+ concurrent mark-sweep generation total 161152K, used 54138K [0x0000000094cc0000, 0x000000009ea20000, 0x0000000100000000)
+ Metaspace       used 27491K, capacity 27726K, committed 28160K, reserved 1073152K
+  class space    used 3684K, capacity 3779K, committed 3840K, reserved 1048576K
+(&container_1552908508995_0001_02_000004?"?stderr4572SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt1/yarn/usercache/hadoop/filecache/11/__spark_libs__3432576122783568761.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/03/18 11:34:27 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 9929@ip-172-31-1-89
+19/03/18 11:34:27 INFO SignalUtils: Registered signal handler for TERM
+19/03/18 11:34:27 INFO SignalUtils: Registered signal handler for HUP
+19/03/18 11:34:27 INFO SignalUtils: Registered signal handler for INT
+19/03/18 11:34:29 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:29 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:29 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:29 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:31 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 220 ms (0 ms spent in bootstraps)
+19/03/18 11:34:31 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:31 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:31 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:31 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:31 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 41 ms (0 ms spent in bootstraps)
+19/03/18 11:34:31 INFO DiskBlockManager: Created local directory at /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-72a69dd0-c8d1-4cfa-b3e8-15736a2b88b4
+19/03/18 11:34:31 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-fd2c313e-8b5e-4c03-b2ee-080cd212c2b0
+19/03/18 11:34:32 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+19/03/18 11:34:32 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-2-244.ap-northeast-1.compute.internal:43315
+19/03/18 11:34:32 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/03/18 11:34:32 INFO Executor: Starting executor ID 3 on host ip-172-31-1-89.ap-northeast-1.compute.internal
+19/03/18 11:34:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35913.
+19/03/18 11:34:33 INFO NettyBlockTransferService: Server created on ip-172-31-1-89.ap-northeast-1.compute.internal:35913
+19/03/18 11:34:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/03/18 11:34:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(3, ip-172-31-1-89.ap-northeast-1.compute.internal, 35913, None)
+19/03/18 11:34:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(3, ip-172-31-1-89.ap-northeast-1.compute.internal, 35913, None)
+19/03/18 11:34:33 INFO BlockManager: external shuffle service port = 7337
+19/03/18 11:34:33 INFO BlockManager: Registering executor with local external shuffle service.
+19/03/18 11:34:33 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:7337 after 19 ms (0 ms spent in bootstraps)
+19/03/18 11:34:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(3, ip-172-31-1-89.ap-northeast-1.compute.internal, 35913, None)
+19/03/18 11:34:51 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+19/03/18 11:34:51 INFO MemoryStore: MemoryStore cleared
+19/03/18 11:34:51 INFO BlockManager: BlockManager stopped
+19/03/18 11:34:51 INFO ShutdownHookManager: Shutdown hook called
+stdout42392019-03-18T11:34:27.442+0000: [GC (Allocation Failure) 2019-03-18T11:34:27.442+0000: [ParNew: 64512K->6658K(72512K), 0.0449962 secs] 64512K->6658K(233664K), 0.0451068 secs] [Times: user=0.03 sys=0.01, real=0.04 secs] 
+2019-03-18T11:34:28.272+0000: [GC (Allocation Failure) 2019-03-18T11:34:28.273+0000: [ParNew: 71170K->3900K(72512K), 0.0851846 secs] 71170K->6274K(233664K), 0.0852705 secs] [Times: user=0.14 sys=0.00, real=0.08 secs] 
+2019-03-18T11:34:29.349+0000: [GC (Allocation Failure) 2019-03-18T11:34:29.349+0000: [ParNew: 68407K->2995K(72512K), 0.0066402 secs] 70781K->5368K(233664K), 0.0067292 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:30.278+0000: [GC (Allocation Failure) 2019-03-18T11:34:30.278+0000: [ParNew: 67507K->3708K(72512K), 0.0217930 secs] 69880K->6081K(233664K), 0.0218769 secs] [Times: user=0.02 sys=0.00, real=0.03 secs] 
+2019-03-18T11:34:30.841+0000: [GC (Allocation Failure) 2019-03-18T11:34:30.841+0000: [ParNew: 68220K->6103K(72512K), 0.0083038 secs] 70593K->8477K(233664K), 0.0083921 secs] [Times: user=0.02 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:31.452+0000: [GC (Allocation Failure) 2019-03-18T11:34:31.452+0000: [ParNew: 70615K->5645K(72512K), 0.0655125 secs] 72989K->25246K(233664K), 0.0656004 secs] [Times: user=0.10 sys=0.01, real=0.06 secs] 
+2019-03-18T11:34:31.528+0000: [GC (CMS Initial Mark) [1 CMS-initial-mark: 19600K(161152K)] 26148K(233664K), 0.0027559 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:31.531+0000: [CMS-concurrent-mark-start]
+2019-03-18T11:34:31.568+0000: [CMS-concurrent-mark: 0.037/0.037 secs] [Times: user=0.06 sys=0.00, real=0.03 secs] 
+2019-03-18T11:34:31.573+0000: [CMS-concurrent-preclean-start]
+2019-03-18T11:34:31.574+0000: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:31.574+0000: [CMS-concurrent-abortable-preclean-start]
+2019-03-18T11:34:31.841+0000: [CMS-concurrent-abortable-preclean: 0.114/0.267 secs] [Times: user=0.28 sys=0.03, real=0.27 secs] 
+2019-03-18T11:34:31.842+0000: [GC (CMS Final Remark) [YG occupancy: 40637 K (72512 K)]2019-03-18T11:34:31.842+0000: [Rescan (parallel) , 0.0047959 secs]2019-03-18T11:34:31.846+0000: [weak refs processing, 0.0000559 secs]2019-03-18T11:34:31.847+0000: [class unloading, 0.0033032 secs]2019-03-18T11:34:31.850+0000: [scrub symbol table, 0.0037882 secs]2019-03-18T11:34:31.854+0000: [scrub string table, 0.0003783 secs][1 CMS-remark: 19600K(161152K)] 60238K(233664K), 0.0128564 secs] [Times: user=0.02 sys=0.01, real=0.01 secs] 
+2019-03-18T11:34:31.855+0000: [CMS-concurrent-sweep-start]
+2019-03-18T11:34:31.857+0000: [CMS-concurrent-sweep: 0.002/0.002 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:31.857+0000: [CMS-concurrent-reset-start]
+2019-03-18T11:34:31.896+0000: [CMS-concurrent-reset: 0.039/0.039 secs] [Times: user=0.02 sys=0.02, real=0.04 secs] 
+2019-03-18T11:34:32.090+0000: [GC (Allocation Failure) 2019-03-18T11:34:32.090+0000: [ParNew: 70157K->5662K(72512K), 0.0311208 secs] 89743K->41633K(233664K), 0.0312054 secs] [Times: user=0.06 sys=0.01, real=0.04 secs] 
+2019-03-18T11:34:32.478+0000: [GC (Allocation Failure) 2019-03-18T11:34:32.478+0000: [ParNew: 70174K->6353K(72512K), 0.0231454 secs] 106145K->43581K(233664K), 0.0232302 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+2019-03-18T11:34:51.591+0000: [GC (Allocation Failure) 2019-03-18T11:34:51.591+0000: [ParNew: 70865K->4458K(72512K), 0.0608670 secs] 108093K->58560K(233664K), 0.0609495 secs] [Times: user=0.05 sys=0.02, real=0.06 secs] 
+Heap
+ par new generation   total 72512K, used 6782K [0x0000000080000000, 0x0000000084ea0000, 0x0000000094cc0000)
+  eden space 64512K,   3% used [0x0000000080000000, 0x00000000802451a0, 0x0000000083f00000)
+  from space 8000K,  55% used [0x00000000846d0000, 0x0000000084b2a8c8, 0x0000000084ea0000)
+  to   space 8000K,   0% used [0x0000000083f00000, 0x0000000083f00000, 0x00000000846d0000)
+ concurrent mark-sweep generation total 161152K, used 54101K [0x0000000094cc0000, 0x000000009ea20000, 0x0000000100000000)
+ Metaspace       used 27515K, capacity 27790K, committed 28180K, reserved 1073152K
+  class space    used 3684K, capacity 3779K, committed 3864K, reserved 1048576K
+(&container_1552908508995_0001_02_000008?"?stderr4571SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt1/yarn/usercache/hadoop/filecache/11/__spark_libs__3432576122783568761.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/03/18 11:34:31 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 10001@ip-172-31-1-89
+19/03/18 11:34:31 INFO SignalUtils: Registered signal handler for TERM
+19/03/18 11:34:31 INFO SignalUtils: Registered signal handler for HUP
+19/03/18 11:34:31 INFO SignalUtils: Registered signal handler for INT
+19/03/18 11:34:33 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:33 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:33 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:33 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:34 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 105 ms (0 ms spent in bootstraps)
+19/03/18 11:34:34 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:34 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:34 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:34 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:34 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 8 ms (0 ms spent in bootstraps)
+19/03/18 11:34:34 INFO DiskBlockManager: Created local directory at /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-3700c1ee-c322-4361-9206-7833f9771f88
+19/03/18 11:34:34 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-91af400c-c8b5-4fab-b228-f146e445e921
+19/03/18 11:34:34 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+19/03/18 11:34:34 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-2-244.ap-northeast-1.compute.internal:43315
+19/03/18 11:34:34 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/03/18 11:34:34 INFO Executor: Starting executor ID 6 on host ip-172-31-1-89.ap-northeast-1.compute.internal
+19/03/18 11:34:34 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43743.
+19/03/18 11:34:34 INFO NettyBlockTransferService: Server created on ip-172-31-1-89.ap-northeast-1.compute.internal:43743
+19/03/18 11:34:34 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/03/18 11:34:34 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(6, ip-172-31-1-89.ap-northeast-1.compute.internal, 43743, None)
+19/03/18 11:34:34 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(6, ip-172-31-1-89.ap-northeast-1.compute.internal, 43743, None)
+19/03/18 11:34:34 INFO BlockManager: external shuffle service port = 7337
+19/03/18 11:34:34 INFO BlockManager: Registering executor with local external shuffle service.
+19/03/18 11:34:34 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:7337 after 2 ms (0 ms spent in bootstraps)
+19/03/18 11:34:34 INFO BlockManager: Initialized BlockManager: BlockManagerId(6, ip-172-31-1-89.ap-northeast-1.compute.internal, 43743, None)
+19/03/18 11:34:51 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+19/03/18 11:34:51 INFO MemoryStore: MemoryStore cleared
+19/03/18 11:34:51 INFO BlockManager: BlockManager stopped
+19/03/18 11:34:51 INFO ShutdownHookManager: Shutdown hook called
+stdout42392019-03-18T11:34:30.965+0000: [GC (Allocation Failure) 2019-03-18T11:34:30.965+0000: [ParNew: 64512K->6665K(72512K), 0.0209811 secs] 64512K->6665K(233664K), 0.0210924 secs] [Times: user=0.02 sys=0.00, real=0.02 secs] 
+2019-03-18T11:34:31.719+0000: [GC (Allocation Failure) 2019-03-18T11:34:31.719+0000: [ParNew: 71177K->4443K(72512K), 0.0499765 secs] 71177K->6817K(233664K), 0.0500608 secs] [Times: user=0.06 sys=0.00, real=0.04 secs] 
+2019-03-18T11:34:32.449+0000: [GC (Allocation Failure) 2019-03-18T11:34:32.449+0000: [ParNew: 68955K->3179K(72512K), 0.0179206 secs] 71329K->5553K(233664K), 0.0180074 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+2019-03-18T11:34:33.371+0000: [GC (Allocation Failure) 2019-03-18T11:34:33.371+0000: [ParNew: 67691K->3663K(72512K), 0.0327735 secs] 70065K->6036K(233664K), 0.0328637 secs] [Times: user=0.04 sys=0.00, real=0.03 secs] 
+2019-03-18T11:34:33.898+0000: [GC (Allocation Failure) 2019-03-18T11:34:33.898+0000: [ParNew: 68175K->5183K(72512K), 0.0213232 secs] 70548K->7556K(233664K), 0.0214075 secs] [Times: user=0.04 sys=0.00, real=0.03 secs] 
+2019-03-18T11:34:34.166+0000: [GC (Allocation Failure) 2019-03-18T11:34:34.166+0000: [ParNew: 69695K->4405K(72512K), 0.0378203 secs] 72068K->24006K(233664K), 0.0378824 secs] [Times: user=0.11 sys=0.02, real=0.04 secs] 
+2019-03-18T11:34:34.204+0000: [GC (CMS Initial Mark) [1 CMS-initial-mark: 19600K(161152K)] 24903K(233664K), 0.0018859 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:34.206+0000: [CMS-concurrent-mark-start]
+2019-03-18T11:34:34.228+0000: [CMS-concurrent-mark: 0.022/0.022 secs] [Times: user=0.07 sys=0.00, real=0.02 secs] 
+2019-03-18T11:34:34.228+0000: [CMS-concurrent-preclean-start]
+2019-03-18T11:34:34.230+0000: [CMS-concurrent-preclean: 0.001/0.002 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:34.231+0000: [CMS-concurrent-abortable-preclean-start]
+2019-03-18T11:34:34.321+0000: [CMS-concurrent-abortable-preclean: 0.063/0.090 secs] [Times: user=0.30 sys=0.01, real=0.09 secs] 
+2019-03-18T11:34:34.321+0000: [GC (CMS Final Remark) [YG occupancy: 38554 K (72512 K)]2019-03-18T11:34:34.321+0000: [Rescan (parallel) , 0.0093685 secs]2019-03-18T11:34:34.331+0000: [weak refs processing, 0.0000541 secs]2019-03-18T11:34:34.331+0000: [class unloading, 0.0032224 secs]2019-03-18T11:34:34.334+0000: [scrub symbol table, 0.0037033 secs]2019-03-18T11:34:34.338+0000: [scrub string table, 0.0003790 secs][1 CMS-remark: 19600K(161152K)] 58155K(233664K), 0.0172127 secs] [Times: user=0.06 sys=0.00, real=0.02 secs] 
+2019-03-18T11:34:34.340+0000: [CMS-concurrent-sweep-start]
+2019-03-18T11:34:34.342+0000: [CMS-concurrent-sweep: 0.002/0.002 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:34.342+0000: [CMS-concurrent-reset-start]
+2019-03-18T11:34:34.428+0000: [CMS-concurrent-reset: 0.085/0.085 secs] [Times: user=0.17 sys=0.09, real=0.08 secs] 
+2019-03-18T11:34:34.511+0000: [GC (Allocation Failure) 2019-03-18T11:34:34.511+0000: [ParNew: 68917K->5282K(72512K), 0.0162071 secs] 88504K->41252K(233664K), 0.0162760 secs] [Times: user=0.06 sys=0.01, real=0.01 secs] 
+2019-03-18T11:34:34.733+0000: [GC (Allocation Failure) 2019-03-18T11:34:34.733+0000: [ParNew: 69794K->7898K(72512K), 0.0056669 secs] 105764K->43869K(233664K), 0.0057338 secs] [Times: user=0.02 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:51.561+0000: [GC (Allocation Failure) 2019-03-18T11:34:51.561+0000: [ParNew: 72410K->4245K(72512K), 0.0905771 secs] 108381K->58342K(233664K), 0.0906492 secs] [Times: user=0.08 sys=0.01, real=0.09 secs] 
+Heap
+ par new generation   total 72512K, used 6181K [0x0000000080000000, 0x0000000084ea0000, 0x0000000094cc0000)
+  eden space 64512K,   3% used [0x0000000080000000, 0x00000000801e40a0, 0x0000000083f00000)
+  from space 8000K,  53% used [0x00000000846d0000, 0x0000000084af56a0, 0x0000000084ea0000)
+  to   space 8000K,   0% used [0x0000000083f00000, 0x0000000083f00000, 0x00000000846d0000)
+ concurrent mark-sweep generation total 161152K, used 54097K [0x0000000094cc0000, 0x000000009ea20000, 0x0000000100000000)
+ Metaspace       used 27493K, capacity 27726K, committed 28180K, reserved 1073152K
+  class space    used 3684K, capacity 3779K, committed 3864K, reserved 1048576K
+(&container_1552908508995_0001_01_000001?L?stderr19130SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt1/yarn/usercache/hadoop/filecache/11/__spark_libs__3432576122783568761.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/03/18 11:33:38 INFO SignalUtils: Registered signal handler for TERM
+19/03/18 11:33:38 INFO SignalUtils: Registered signal handler for HUP
+19/03/18 11:33:38 INFO SignalUtils: Registered signal handler for INT
+19/03/18 11:33:38 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:33:38 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:33:38 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:33:38 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:33:38 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:33:39 INFO ApplicationMaster: Preparing Local resources
+19/03/18 11:33:40 INFO ApplicationMaster: ApplicationAttemptId: appattempt_1552908508995_0001_000001
+19/03/18 11:33:40 INFO ApplicationMaster: Starting the user application in a separate Thread
+19/03/18 11:33:40 INFO ApplicationMaster: Waiting for spark context initialization...
+19/03/18 11:33:41 INFO SparkContext: Running Spark version 2.4.0
+19/03/18 11:33:42 INFO SparkContext: Submitted application: als_spark.py
+19/03/18 11:33:42 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:33:42 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:33:42 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:33:42 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:33:42 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:33:42 INFO Utils: Successfully started service 'sparkDriver' on port 39063.
+19/03/18 11:33:42 INFO SparkEnv: Registering MapOutputTracker
+19/03/18 11:33:42 INFO SparkEnv: Registering BlockManagerMaster
+19/03/18 11:33:42 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+19/03/18 11:33:42 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+19/03/18 11:33:42 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-024da29f-4f71-4a70-819d-743066c0e156
+19/03/18 11:33:42 INFO DiskBlockManager: Created local directory at /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-07634470-7ded-4d98-a961-487a61e68ba1
+19/03/18 11:33:42 INFO MemoryStore: MemoryStore started with capacity 2.8 GB
+19/03/18 11:33:42 INFO SparkEnv: Registering OutputCommitCoordinator
+19/03/18 11:33:42 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+19/03/18 11:33:43 INFO Utils: Successfully started service 'SparkUI' on port 40607.
+19/03/18 11:33:43 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://ip-172-31-1-89.ap-northeast-1.compute.internal:40607
+19/03/18 11:33:43 INFO YarnClusterScheduler: Created YarnClusterScheduler
+19/03/18 11:33:43 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1552908508995_0001 and attemptId Some(appattempt_1552908508995_0001_000001)
+19/03/18 11:33:43 INFO Utils: Using initial executors = 10, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+19/03/18 11:33:43 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43667.
+19/03/18 11:33:43 INFO NettyBlockTransferService: Server created on ip-172-31-1-89.ap-northeast-1.compute.internal:43667
+19/03/18 11:33:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/03/18 11:33:43 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-172-31-1-89.ap-northeast-1.compute.internal, 43667, None)
+19/03/18 11:33:43 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-1-89.ap-northeast-1.compute.internal:43667 with 2.8 GB RAM, BlockManagerId(driver, ip-172-31-1-89.ap-northeast-1.compute.internal, 43667, None)
+19/03/18 11:33:43 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-172-31-1-89.ap-northeast-1.compute.internal, 43667, None)
+19/03/18 11:33:43 INFO BlockManager: external shuffle service port = 7337
+19/03/18 11:33:43 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-172-31-1-89.ap-northeast-1.compute.internal, 43667, None)
+19/03/18 11:33:43 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+19/03/18 11:33:44 INFO EventLoggingListener: Logging events to hdfs:/var/log/spark/apps/application_1552908508995_0001_1
+19/03/18 11:33:44 INFO Utils: Using initial executors = 10, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+19/03/18 11:33:44 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to request executors before the AM has registered!
+19/03/18 11:33:44 INFO RMProxy: Connecting to ResourceManager at ip-172-31-2-30.ap-northeast-1.compute.internal/172.31.2.30:8030
+19/03/18 11:33:44 INFO YarnRMClient: Registering the ApplicationMaster
+19/03/18 11:33:44 INFO ApplicationMaster: 
+===============================================================================
+YARN executor launch context:
+  env:
+    CLASSPATH -> /usr/lib/hadoop-lzo/lib/*:/usr/lib/hadoop/hadoop-aws.jar:/usr/share/aws/aws-java-sdk/*:/usr/share/aws/emr/emrfs/conf:/usr/share/aws/emr/emrfs/lib/*:/usr/share/aws/emr/emrfs/auxlib/*:/usr/share/aws/emr/goodies/lib/emr-spark-goodies.jar:/usr/share/aws/emr/security/conf:/usr/share/aws/emr/security/lib/*:/usr/share/aws/hmclient/lib/aws-glue-datacatalog-spark-client.jar:/usr/share/java/Hive-JSON-Serde/hive-openx-serde.jar:/usr/share/aws/sagemaker-spark-sdk/lib/sagemaker-spark-sdk.jar:/usr/share/aws/emr/s3select/lib/emr-s3-select-spark-connector.jar<CPS>{{PWD}}<CPS>{{PWD}}/__spark_conf__<CPS>{{PWD}}/__spark_libs__/*<CPS>$HADOOP_CONF_DIR<CPS>$HADOOP_COMMON_HOME/*<CPS>$HADOOP_COMMON_HOME/lib/*<CPS>$HADOOP_HDFS_HOME/*<CPS>$HADOOP_HDFS_HOME/lib/*<CPS>$HADOOP_MAPRED_HOME/*<CPS>$HADOOP_MAPRED_HOME/lib/*<CPS>$HADOOP_YARN_HOME/*<CPS>$HADOOP_YARN_HOME/lib/*<CPS>/usr/lib/hadoop-lzo/lib/*<CPS>/usr/share/aws/emr/emrfs/conf<CPS>/usr/share/aws/emr/emrfs/lib/*<CPS>/usr/share/aws/emr/emrfs/auxlib/*<CPS>/usr/share/aws/emr/lib/*<CPS>/usr/share/aws/emr/ddb/lib/emr-ddb-hadoop.jar<CPS>/usr/share/aws/emr/goodies/lib/emr-hadoop-goodies.jar<CPS>/usr/share/aws/emr/cloudwatch-sink/lib/*<CPS>/usr/share/aws/aws-java-sdk/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*<CPS>/usr/lib/hadoop-lzo/lib/*<CPS>/usr/share/aws/emr/emrfs/conf<CPS>/usr/share/aws/emr/emrfs/lib/*<CPS>/usr/share/aws/emr/emrfs/auxlib/*<CPS>/usr/share/aws/emr/lib/*<CPS>/usr/share/aws/emr/ddb/lib/emr-ddb-hadoop.jar<CPS>/usr/share/aws/emr/goodies/lib/emr-hadoop-goodies.jar<CPS>/usr/share/aws/emr/cloudwatch-sink/lib/*<CPS>/usr/share/aws/aws-java-sdk/*<CPS>{{PWD}}/__spark_conf__/__hadoop_conf__
+    SPARK_YARN_STAGING_DIR -> hdfs://ip-172-31-2-30.ap-northeast-1.compute.internal:8020/user/hadoop/.sparkStaging/application_1552908508995_0001
+    SPARK_USER -> hadoop
+    PYTHONPATH -> {{PWD}}/__pyfiles__<CPS>{{PWD}}/pyspark.zip<CPS>{{PWD}}/py4j-0.10.7-src.zip
+    SPARK_PUBLIC_DNS -> ip-172-31-1-89.ap-northeast-1.compute.internal
+
+  command:
+    LD_LIBRARY_PATH=\"/usr/lib/hadoop/lib/native:/usr/lib/hadoop-lzo/lib/native:$LD_LIBRARY_PATH\" \ 
+      {{JAVA_HOME}}/bin/java \ 
+      -server \ 
+      -Xmx2048m \ 
+      '-verbose:gc' \ 
+      '-XX:+PrintGCDetails' \ 
+      '-XX:+PrintGCDateStamps' \ 
+      '-XX:+UseConcMarkSweepGC' \ 
+      '-XX:CMSInitiatingOccupancyFraction=70' \ 
+      '-XX:MaxHeapFreeRatio=70' \ 
+      '-XX:+CMSClassUnloadingEnabled' \ 
+      '-XX:OnOutOfMemoryError=kill -9 %p' \ 
+      -Djava.io.tmpdir={{PWD}}/tmp \ 
+      '-Dspark.driver.port=39063' \ 
+      '-Dspark.history.ui.port=18080' \ 
+      '-Dspark.ui.port=0' \ 
+      -Dspark.yarn.app.container.log.dir=<LOG_DIR> \ 
+      org.apache.spark.executor.CoarseGrainedExecutorBackend \ 
+      --driver-url \ 
+      spark://CoarseGrainedScheduler@ip-172-31-1-89.ap-northeast-1.compute.internal:39063 \ 
+      --executor-id \ 
+      <executorId> \ 
+      --hostname \ 
+      <hostname> \ 
+      --cores \ 
+      4 \ 
+      --app-id \ 
+      application_1552908508995_0001 \ 
+      --user-class-path \ 
+      file:$PWD/__app__.jar \ 
+      1><LOG_DIR>/stdout \ 
+      2><LOG_DIR>/stderr
+
+  resources:
+    __spark_conf__ -> resource { scheme: "hdfs" host: "ip-172-31-2-30.ap-northeast-1.compute.internal" port: 8020 file: "/user/hadoop/.sparkStaging/application_1552908508995_0001/__spark_conf__.zip" } size: 212539 timestamp: 1552908811198 type: ARCHIVE visibility: PRIVATE
+    pyspark.zip -> resource { scheme: "hdfs" host: "ip-172-31-2-30.ap-northeast-1.compute.internal" port: 8020 file: "/user/hadoop/.sparkStaging/application_1552908508995_0001/pyspark.zip" } size: 589684 timestamp: 1552908810861 type: FILE visibility: PRIVATE
+    __pyfiles__/load.py -> resource { scheme: "hdfs" host: "ip-172-31-2-30.ap-northeast-1.compute.internal" port: 8020 file: "/user/hadoop/.sparkStaging/application_1552908508995_0001/load.py" } size: 5301 timestamp: 1552908810925 type: FILE visibility: PRIVATE
+    __spark_libs__ -> resource { scheme: "hdfs" host: "ip-172-31-2-30.ap-northeast-1.compute.internal" port: 8020 file: "/user/hadoop/.sparkStaging/application_1552908508995_0001/__spark_libs__3432576122783568761.zip" } size: 229091301 timestamp: 1552908810194 type: ARCHIVE visibility: PRIVATE
+    py4j-0.10.7-src.zip -> resource { scheme: "hdfs" host: "ip-172-31-2-30.ap-northeast-1.compute.internal" port: 8020 file: "/user/hadoop/.sparkStaging/application_1552908508995_0001/py4j-0.10.7-src.zip" } size: 42437 timestamp: 1552908810894 type: FILE visibility: PRIVATE
+
+===============================================================================
+19/03/18 11:33:44 INFO Utils: Using initial executors = 10, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+19/03/18 11:33:44 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark://YarnAM@ip-172-31-1-89.ap-northeast-1.compute.internal:39063)
+19/03/18 11:33:44 INFO YarnAllocator: Will request 10 executor container(s), each with 4 core(s) and 2432 MB memory (including 384 MB of overhead)
+19/03/18 11:33:44 INFO YarnAllocator: Submitted 10 unlocalized container requests.
+19/03/18 11:33:44 INFO ApplicationMaster: Started progress reporter thread with (heartbeat : 3000, initial allocation : 200) intervals
+19/03/18 11:33:46 INFO AMRMClientImpl: Received new token for : ip-172-31-2-244.ap-northeast-1.compute.internal:8041
+19/03/18 11:33:46 INFO YarnAllocator: Launching container container_1552908508995_0001_01_000002 on host ip-172-31-2-244.ap-northeast-1.compute.internal for executor with ID 1
+19/03/18 11:33:46 INFO YarnAllocator: Received 1 containers from YARN, launching executors on 1 of them.
+19/03/18 11:33:46 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+19/03/18 11:33:47 INFO AMRMClientImpl: Received new token for : ip-172-31-1-89.ap-northeast-1.compute.internal:8041
+19/03/18 11:33:47 INFO YarnAllocator: Launching container container_1552908508995_0001_01_000003 on host ip-172-31-1-89.ap-northeast-1.compute.internal for executor with ID 2
+19/03/18 11:33:47 INFO YarnAllocator: Launching container container_1552908508995_0001_01_000004 on host ip-172-31-2-244.ap-northeast-1.compute.internal for executor with ID 3
+19/03/18 11:33:47 INFO YarnAllocator: Launching container container_1552908508995_0001_01_000005 on host ip-172-31-1-89.ap-northeast-1.compute.internal for executor with ID 4
+19/03/18 11:33:47 INFO YarnAllocator: Launching container container_1552908508995_0001_01_000006 on host ip-172-31-2-244.ap-northeast-1.compute.internal for executor with ID 5
+19/03/18 11:33:47 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+19/03/18 11:33:47 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+19/03/18 11:33:47 INFO YarnAllocator: Received 4 containers from YARN, launching executors on 4 of them.
+19/03/18 11:33:47 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+19/03/18 11:33:47 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+19/03/18 11:33:50 INFO YarnAllocator: Launching container container_1552908508995_0001_01_000008 on host ip-172-31-2-244.ap-northeast-1.compute.internal for executor with ID 6
+19/03/18 11:33:50 INFO YarnAllocator: Received 1 containers from YARN, launching executors on 1 of them.
+19/03/18 11:33:50 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+19/03/18 11:33:52 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.1.89:43866) with ID 2
+19/03/18 11:33:52 INFO ExecutorAllocationManager: New executor 2 has registered (new total is 1)
+19/03/18 11:33:52 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.1.89:43868) with ID 4
+19/03/18 11:33:52 INFO ExecutorAllocationManager: New executor 4 has registered (new total is 2)
+19/03/18 11:33:52 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-1-89.ap-northeast-1.compute.internal:39679 with 1028.8 MB RAM, BlockManagerId(2, ip-172-31-1-89.ap-northeast-1.compute.internal, 39679, None)
+19/03/18 11:33:52 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-1-89.ap-northeast-1.compute.internal:44581 with 1028.8 MB RAM, BlockManagerId(4, ip-172-31-1-89.ap-northeast-1.compute.internal, 44581, None)
+19/03/18 11:33:56 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.2.244:33284) with ID 1
+19/03/18 11:33:56 INFO ExecutorAllocationManager: New executor 1 has registered (new total is 3)
+19/03/18 11:33:56 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.2.244:33286) with ID 3
+19/03/18 11:33:56 INFO ExecutorAllocationManager: New executor 3 has registered (new total is 4)
+19/03/18 11:33:56 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.2.244:33288) with ID 5
+19/03/18 11:33:56 INFO ExecutorAllocationManager: New executor 5 has registered (new total is 5)
+19/03/18 11:33:56 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-2-244.ap-northeast-1.compute.internal:32915 with 1028.8 MB RAM, BlockManagerId(1, ip-172-31-2-244.ap-northeast-1.compute.internal, 32915, None)
+19/03/18 11:33:57 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-2-244.ap-northeast-1.compute.internal:39525 with 1028.8 MB RAM, BlockManagerId(3, ip-172-31-2-244.ap-northeast-1.compute.internal, 39525, None)
+19/03/18 11:33:57 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-2-244.ap-northeast-1.compute.internal:43095 with 1028.8 MB RAM, BlockManagerId(5, ip-172-31-2-244.ap-northeast-1.compute.internal, 43095, None)
+19/03/18 11:33:58 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.2.244:33298) with ID 6
+19/03/18 11:33:58 INFO ExecutorAllocationManager: New executor 6 has registered (new total is 6)
+19/03/18 11:33:58 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-2-244.ap-northeast-1.compute.internal:44389 with 1028.8 MB RAM, BlockManagerId(6, ip-172-31-2-244.ap-northeast-1.compute.internal, 44389, None)
+19/03/18 11:34:13 INFO YarnClusterSchedulerBackend: SchedulerBackend is ready for scheduling beginning after waiting maxRegisteredResourcesWaitingTime: 30000(ms)
+19/03/18 11:34:13 INFO YarnClusterScheduler: YarnClusterScheduler.postStartHook done
+19/03/18 11:34:13 ERROR ApplicationMaster: User application exited with status 1
+19/03/18 11:34:13 INFO ApplicationMaster: Final app status: FAILED, exitCode: 1, (reason: User application exited with status 1)
+19/03/18 11:34:13 INFO SparkContext: Invoking stop() from shutdown hook
+19/03/18 11:34:13 INFO SparkUI: Stopped Spark web UI at http://ip-172-31-1-89.ap-northeast-1.compute.internal:40607
+19/03/18 11:34:13 INFO YarnAllocator: Driver requested a total number of 0 executor(s).
+19/03/18 11:34:13 INFO YarnClusterSchedulerBackend: Shutting down all executors
+19/03/18 11:34:13 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+19/03/18 11:34:13 INFO SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+19/03/18 11:34:13 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+19/03/18 11:34:13 INFO MemoryStore: MemoryStore cleared
+19/03/18 11:34:13 INFO BlockManager: BlockManager stopped
+19/03/18 11:34:13 INFO BlockManagerMaster: BlockManagerMaster stopped
+19/03/18 11:34:13 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+19/03/18 11:34:13 INFO SparkContext: Successfully stopped SparkContext
+19/03/18 11:34:13 INFO ShutdownHookManager: Shutdown hook called
+19/03/18 11:34:13 INFO ShutdownHookManager: Deleting directory /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/spark-ac4e5001-ff3f-4154-b923-516f07b96b8c
+19/03/18 11:34:13 INFO ShutdownHookManager: Deleting directory /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/spark-2a6b9745-ede9-44ed-9f2d-62f8c0344c1c
+19/03/18 11:34:13 INFO ShutdownHookManager: Deleting directory /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/spark-ac4e5001-ff3f-4154-b923-516f07b96b8c/pyspark-2f231eb7-780f-45ac-ad69-c1c1f02bff1b
+stdout432Traceback (most recent call last):
+  File "als_spark.py", line 100, in <module>
+    R_sparse_column, R_sparse_row = load_as_sparse(input)
+  File "/mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/container_1552908508995_0001_01_000001/__pyfiles__/load.py", line 48, in load_as_sparse
+    with open(input,"r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../Data/netflix_data/my_data_3_sorted.txt'
+(&container_1552908508995_0001_02_000002?"?stderr4571SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt1/yarn/usercache/hadoop/filecache/11/__spark_libs__3432576122783568761.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/03/18 11:34:25 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 9890@ip-172-31-1-89
+19/03/18 11:34:25 INFO SignalUtils: Registered signal handler for TERM
+19/03/18 11:34:25 INFO SignalUtils: Registered signal handler for HUP
+19/03/18 11:34:25 INFO SignalUtils: Registered signal handler for INT
+19/03/18 11:34:26 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:26 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:26 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:26 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:27 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 255 ms (0 ms spent in bootstraps)
+19/03/18 11:34:27 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/03/18 11:34:27 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/03/18 11:34:27 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 11:34:27 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 11:34:27 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/03/18 11:34:28 INFO TransportClientFactory: Successfully created connection to ip-172-31-2-244.ap-northeast-1.compute.internal/172.31.2.244:43315 after 2 ms (0 ms spent in bootstraps)
+19/03/18 11:34:28 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-34ce423b-59d3-446d-8cdd-91776b4f7a92
+19/03/18 11:34:28 INFO DiskBlockManager: Created local directory at /mnt1/yarn/usercache/hadoop/appcache/application_1552908508995_0001/blockmgr-3474f245-9e18-4e80-a8e9-ebbba6346281
+19/03/18 11:34:28 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+19/03/18 11:34:29 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-2-244.ap-northeast-1.compute.internal:43315
+19/03/18 11:34:29 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/03/18 11:34:29 INFO Executor: Starting executor ID 1 on host ip-172-31-1-89.ap-northeast-1.compute.internal
+19/03/18 11:34:29 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36793.
+19/03/18 11:34:29 INFO NettyBlockTransferService: Server created on ip-172-31-1-89.ap-northeast-1.compute.internal:36793
+19/03/18 11:34:29 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/03/18 11:34:29 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, ip-172-31-1-89.ap-northeast-1.compute.internal, 36793, None)
+19/03/18 11:34:29 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, ip-172-31-1-89.ap-northeast-1.compute.internal, 36793, None)
+19/03/18 11:34:29 INFO BlockManager: external shuffle service port = 7337
+19/03/18 11:34:29 INFO BlockManager: Registering executor with local external shuffle service.
+19/03/18 11:34:29 INFO TransportClientFactory: Successfully created connection to ip-172-31-1-89.ap-northeast-1.compute.internal/172.31.1.89:7337 after 42 ms (0 ms spent in bootstraps)
+19/03/18 11:34:29 INFO BlockManager: Initialized BlockManager: BlockManagerId(1, ip-172-31-1-89.ap-northeast-1.compute.internal, 36793, None)
+19/03/18 11:34:51 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+19/03/18 11:34:51 INFO MemoryStore: MemoryStore cleared
+19/03/18 11:34:51 INFO BlockManager: BlockManager stopped
+19/03/18 11:34:51 INFO ShutdownHookManager: Shutdown hook called
+stdout42392019-03-18T11:34:24.950+0000: [GC (Allocation Failure) 2019-03-18T11:34:24.950+0000: [ParNew: 64512K->6671K(72512K), 0.0069386 secs] 64512K->6671K(233664K), 0.0070194 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:25.350+0000: [GC (Allocation Failure) 2019-03-18T11:34:25.350+0000: [ParNew: 71183K->3902K(72512K), 0.0314958 secs] 71183K->6274K(233664K), 0.0315864 secs] [Times: user=0.07 sys=0.00, real=0.03 secs] 
+2019-03-18T11:34:25.876+0000: [GC (Allocation Failure) 2019-03-18T11:34:25.876+0000: [ParNew: 68414K->3181K(72512K), 0.0120761 secs] 70786K->5553K(233664K), 0.0121549 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2019-03-18T11:34:26.358+0000: [GC (Allocation Failure) 2019-03-18T11:34:26.358+0000: [ParNew: 67693K->3744K(72512K), 0.0134957 secs] 70065K->6116K(233664K), 0.0135983 secs] [Times: user=0.01 sys=0.01, real=0.02 secs] 
+2019-03-18T11:34:26.904+0000: [GC (Allocation Failure) 2019-03-18T11:34:26.904+0000: [ParNew: 68256K->5266K(72512K), 0.0253613 secs] 70628K->7638K(233664K), 0.0254490 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+2019-03-18T11:34:27.836+0000: [GC (Allocation Failure) 2019-03-18T11:34:27.836+0000: [ParNew: 69778K->4364K(72512K), 0.0717022 secs] 72150K->23891K(233664K), 0.0717834 secs] [Times: user=0.09 sys=0.01, real=0.07 secs] 
+2019-03-18T11:34:27.921+0000: [GC (CMS Initial Mark) [1 CMS-initial-mark: 19526K(161152K)] 24793K(233664K), 0.0046643 secs] [Times: user=0.00 sys=0.01, real=0.00 secs] 
+2019-03-18T11:34:27.925+0000: [CMS-concurrent-mark-start]
+2019-03-18T11:34:27.970+0000: [CMS-concurrent-mark: 0.045/0.045 secs] [Times: user=0.07 sys=0.00, real=0.05 secs] 
+2019-03-18T11:34:27.970+0000: [CMS-concurrent-preclean-start]
+2019-03-18T11:34:27.971+0000: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:27.971+0000: [CMS-concurrent-abortable-preclean-start]
+2019-03-18T11:34:28.278+0000: [CMS-concurrent-abortable-preclean: 0.086/0.307 secs] [Times: user=0.52 sys=0.01, real=0.30 secs] 
+2019-03-18T11:34:28.290+0000: [GC (CMS Final Remark) [YG occupancy: 44919 K (72512 K)]2019-03-18T11:34:28.291+0000: [Rescan (parallel) , 0.0119834 secs]2019-03-18T11:34:28.303+0000: [weak refs processing, 0.0000560 secs]2019-03-18T11:34:28.303+0000: [class unloading, 0.0036546 secs]2019-03-18T11:34:28.306+0000: [scrub symbol table, 0.0039303 secs]2019-03-18T11:34:28.310+0000: [scrub string table, 0.0003921 secs][1 CMS-remark: 19526K(161152K)] 64446K(233664K), 0.0206449 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+2019-03-18T11:34:28.311+0000: [CMS-concurrent-sweep-start]
+2019-03-18T11:34:28.313+0000: [CMS-concurrent-sweep: 0.002/0.002 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2019-03-18T11:34:28.313+0000: [CMS-concurrent-reset-start]
+2019-03-18T11:34:28.403+0000: [CMS-concurrent-reset: 0.090/0.090 secs] [Times: user=0.07 sys=0.07, real=0.09 secs] 
+2019-03-18T11:34:28.535+0000: [GC (Allocation Failure) 2019-03-18T11:34:28.535+0000: [ParNew: 68876K->5254K(72512K), 0.0759368 secs] 88389K->41151K(233664K), 0.0760291 secs] [Times: user=0.11 sys=0.01, real=0.08 secs] 
+2019-03-18T11:34:28.973+0000: [GC (Allocation Failure) 2019-03-18T11:34:28.973+0000: [ParNew: 69766K->6512K(72512K), 0.0398710 secs] 105663K->42408K(233664K), 0.0399683 secs] [Times: user=0.04 sys=0.00, real=0.04 secs] 
+2019-03-18T11:34:51.556+0000: [GC (Allocation Failure) 2019-03-18T11:34:51.556+0000: [ParNew: 71024K->4801K(72512K), 0.0602087 secs] 106920K->58945K(233664K), 0.0602981 secs] [Times: user=0.06 sys=0.02, real=0.06 secs] 
+Heap
+ par new generation   total 72512K, used 6382K [0x0000000080000000, 0x0000000084ea0000, 0x0000000094cc0000)
+  eden space 64512K,   2% used [0x0000000080000000, 0x000000008018b4f8, 0x0000000083f00000)
+  from space 8000K,  60% used [0x00000000846d0000, 0x0000000084b80448, 0x0000000084ea0000)
+  to   space 8000K,   0% used [0x0000000083f00000, 0x0000000083f00000, 0x00000000846d0000)
+ concurrent mark-sweep generation total 161152K, used 54144K [0x0000000094cc0000, 0x000000009ea20000, 0x0000000100000000)
+ Metaspace       used 27526K, capacity 27790K, committed 28184K, reserved 1073152K
+  class space    used 3684K, capacity 3779K, committed 3864K, reserved 1048576K
+
+
+	VERSION*(&container_1552908508995_0001_02_000002
+[hadoop@ip-172-31-2-30 application_1552908508995_0001]$ 

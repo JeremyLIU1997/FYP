@@ -1,0 +1,165 @@
+[hadoop@ip-172-31-9-253 src]$ spark-submit  --master yarn --deploy-mode cluster --num-executors 10  --executor-memory 3g  --py-files ./load.py ./als_spark_emr.py
+19/03/18 09:55:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+19/03/18 09:55:33 INFO RMProxy: Connecting to ResourceManager at ip-172-31-9-253.ap-northeast-1.compute.internal/172.31.9.253:8032
+19/03/18 09:55:33 INFO Client: Requesting a new application from cluster with 2 NodeManagers
+19/03/18 09:55:33 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (11520 MB per container)
+19/03/18 09:55:33 INFO Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+19/03/18 09:55:33 INFO Client: Setting up container launch context for our AM
+19/03/18 09:55:33 INFO Client: Setting up the launch environment for our AM container
+19/03/18 09:55:33 INFO Client: Preparing resources for our AM container
+19/03/18 09:55:34 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+19/03/18 09:55:36 INFO Client: Uploading resource file:/mnt/tmp/spark-d7ca1959-6a96-4c8d-a42a-a65600247476/__spark_libs__5299335754883331835.zip -> hdfs://ip-172-31-9-253.ap-northeast-1.compute.internal:8020/user/hadoop/.sparkStaging/application_1552901642269_0007/__spark_libs__5299335754883331835.zip
+19/03/18 09:55:37 INFO Client: Uploading resource file:/home/hadoop/src/als_spark_emr.py -> hdfs://ip-172-31-9-253.ap-northeast-1.compute.internal:8020/user/hadoop/.sparkStaging/application_1552901642269_0007/als_spark_emr.py
+19/03/18 09:55:38 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/pyspark.zip -> hdfs://ip-172-31-9-253.ap-northeast-1.compute.internal:8020/user/hadoop/.sparkStaging/application_1552901642269_0007/pyspark.zip
+19/03/18 09:55:38 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://ip-172-31-9-253.ap-northeast-1.compute.internal:8020/user/hadoop/.sparkStaging/application_1552901642269_0007/py4j-0.10.7-src.zip
+19/03/18 09:55:38 INFO Client: Uploading resource file:/home/hadoop/src/load.py -> hdfs://ip-172-31-9-253.ap-northeast-1.compute.internal:8020/user/hadoop/.sparkStaging/application_1552901642269_0007/load.py
+19/03/18 09:55:39 INFO Client: Uploading resource file:/mnt/tmp/spark-d7ca1959-6a96-4c8d-a42a-a65600247476/__spark_conf__360124342908107423.zip -> hdfs://ip-172-31-9-253.ap-northeast-1.compute.internal:8020/user/hadoop/.sparkStaging/application_1552901642269_0007/__spark_conf__.zip
+19/03/18 09:55:39 INFO SecurityManager: Changing view acls to: hadoop
+19/03/18 09:55:39 INFO SecurityManager: Changing modify acls to: hadoop
+19/03/18 09:55:39 INFO SecurityManager: Changing view acls groups to: 
+19/03/18 09:55:39 INFO SecurityManager: Changing modify acls groups to: 
+19/03/18 09:55:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+19/03/18 09:55:41 INFO Client: Submitting application application_1552901642269_0007 to ResourceManager
+19/03/18 09:55:41 INFO YarnClientImpl: Submitted application application_1552901642269_0007
+19/03/18 09:55:42 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:42 INFO Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1552902941250
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-9-253.ap-northeast-1.compute.internal:20888/proxy/application_1552901642269_0007/
+	 user: hadoop
+19/03/18 09:55:43 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:44 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:45 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:46 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:47 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:48 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:49 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:55:50 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:50 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: ip-172-31-10-144.ap-northeast-1.compute.internal
+	 ApplicationMaster RPC port: 45893
+	 queue: default
+	 start time: 1552902941250
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-9-253.ap-northeast-1.compute.internal:20888/proxy/application_1552901642269_0007/
+	 user: hadoop
+19/03/18 09:55:51 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:52 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:53 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:54 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:55 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:56 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:57 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:58 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:55:59 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:00 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:01 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:02 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:03 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:04 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:05 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:06 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:07 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:08 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:09 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:10 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:11 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:12 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:13 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:14 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:15 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:16 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:17 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:18 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:19 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:20 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:20 INFO Client: 
+	 client token: N/A
+	 diagnostics: [Mon Mar 18 09:56:20 +0000 2019] Application is Activated, waiting for resources to be assigned for AM.  Details : AM Partition = CORE ; Partition Resource = <memory:23040, vCores:16> ; Queue's Absolute capacity = 100.0 % ; Queue's Absolute used capacity = 0.0 % ; Queue's Absolute max capacity = 100.0 % ; 
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1552902941250
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-9-253.ap-northeast-1.compute.internal:20888/proxy/application_1552901642269_0007/
+	 user: hadoop
+19/03/18 09:56:21 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:22 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:23 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:24 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:25 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:26 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:27 INFO Client: Application report for application_1552901642269_0007 (state: ACCEPTED)
+19/03/18 09:56:28 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:28 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: ip-172-31-6-84.ap-northeast-1.compute.internal
+	 ApplicationMaster RPC port: 35061
+	 queue: default
+	 start time: 1552902941250
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-9-253.ap-northeast-1.compute.internal:20888/proxy/application_1552901642269_0007/
+	 user: hadoop
+19/03/18 09:56:29 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:30 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:31 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:32 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:33 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:34 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:35 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:36 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:37 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:38 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:39 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:40 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:41 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:42 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:43 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:44 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:45 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:46 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:47 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:48 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:49 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:50 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:51 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:52 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:53 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:54 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:55 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:56 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:57 INFO Client: Application report for application_1552901642269_0007 (state: RUNNING)
+19/03/18 09:56:58 INFO Client: Application report for application_1552901642269_0007 (state: FINISHED)
+19/03/18 09:56:58 INFO Client: 
+	 client token: N/A
+	 diagnostics: User application exited with status 1
+	 ApplicationMaster host: ip-172-31-6-84.ap-northeast-1.compute.internal
+	 ApplicationMaster RPC port: 35061
+	 queue: default
+	 start time: 1552902941250
+	 final status: FAILED
+	 tracking URL: http://ip-172-31-9-253.ap-northeast-1.compute.internal:20888/proxy/application_1552901642269_0007/
+	 user: hadoop
+19/03/18 09:56:58 ERROR Client: Application diagnostics message: User application exited with status 1
+Exception in thread "main" org.apache.spark.SparkException: Application application_1552901642269_0007 finished with failed status
+	at org.apache.spark.deploy.yarn.Client.run(Client.scala:1149)
+	at org.apache.spark.deploy.yarn.YarnClusterApplication.start(Client.scala:1526)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:849)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:167)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:195)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+19/03/18 09:56:58 INFO ShutdownHookManager: Shutdown hook called
+19/03/18 09:56:58 INFO ShutdownHookManager: Deleting directory /mnt/tmp/spark-d7ca1959-6a96-4c8d-a42a-a65600247476
+19/03/18 09:56:58 INFO ShutdownHookManager: Deleting directory /mnt/tmp/spark-70b67285-8105-4cea-a8ce-31fe4a72eb9d
+[hadoop@ip-172-31-9-253 src]$ 

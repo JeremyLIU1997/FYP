@@ -36,9 +36,13 @@ import os
 sc = 0
 spark = 0
 
+base_path = "/hadoop/home"
+
 def init():
 	global sc
 	sc = SparkContext()
+	sc.setLogLevel("ALL")
+	sc.addPyFile("/hadoop/home/src/load.py")
 	spark = SparkSession(sc)
 	# clear model from last time
 	# os.system("hdfs dfs -rm -R /NMF/model/my_model")
@@ -96,7 +100,7 @@ init()
 Nf = 2
 N_iter = 100
 
-input = "../Data/netflix_data/my_data_30_sorted.txt"
+input = "/hadoop/home/Data/netflix_data/my_data_30_sorted.txt"
 R_sparse_column, R_sparse_row = load_as_sparse(input)
 row_nonzero_count = column_nonzero_count = []
 for i in range(len(R_sparse_column[1])):
@@ -134,17 +138,17 @@ for i in range(N_iter):
 	print("Iteration #" + str(i + 1) + ": ", end="")
 	U = sc.broadcast(np.array(U))
 	# print("1")
-	M = sc.parallelize(M)
+	M = sc.parallelize(M,numSlices=1000)
 	# print("2")
-	M = M.map(update_M)
+	M = M.map(update_M).cache()
 	# print("3")
 	M = M.collect()
 	# print("4")
 	M = sc.broadcast(np.array(M))
 	# print("5")
-	U = sc.parallelize(U.value)
+	U = sc.parallelize(U.value,numSlices=1000)
 	# print("6")
-	U = U.map(update_U)
+	U = U.map(update_U).cache()
 	# print("7")
 	U = U.collect()
 	# print("8")

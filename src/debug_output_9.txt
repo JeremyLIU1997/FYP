@@ -1,0 +1,142 @@
+[LeLe@Jeremys-MacBook-Pro src]$ o als_local.py
+[LeLe@Jeremys-MacBook-Pro src]$ ./als_local.py
+Loading data...
+#users: 19519
+#movies: 10
+R.shape: (19519, 10)
+Factorizing...
+Nf = 2
+Number of nonzero: 20352
+./als_local.py:93: RuntimeWarning: divide by zero encountered in double_scalars
+  print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
+Iteration #1: 0.04679879219045171(%inf)
+Iteration #2: 0.03168987509087677(%67.71515589956275)
+Iteration #3: 0.016064619841195192(%50.69322550223636)
+Iteration #4: 0.011425173772761633(%71.12010047983563)
+Iteration #5: 0.009858855503523526(%86.29063942141245)
+Iteration #6: 0.009062845676309637(%91.92594082620037)
+Iteration #7: 0.008615339067684353(%95.06218438878342)
+Iteration #8: 0.00835832943867786(%97.01683674911276)
+Iteration #9: 0.00821552020420044(%98.29141414531263)
+Iteration #10: 0.008142495429558303(%99.11113632701188)
+^CIteration #11: Traceback (most recent call last):
+  File "./als_local.py", line 125, in <module>
+    als_fit(R)
+  File "./als_local.py", line 80, in als_fit
+    lU[i,:] = np.matmul(np.linalg.inv(matrix),vector)
+  File "/usr/local/lib/python3.6/site-packages/numpy/linalg/linalg.py", line 528, in inv
+    ainv = _umath_linalg.inv(a, signature=signature, extobj=extobj)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./als_local.py", line 133, in <module>
+    save(tempU, "../Model/user.txt")
+  File "/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/save_model.py", line 19, in save
+    for i in range(len(array)):
+TypeError: object of type 'int' has no len()
+[LeLe@Jeremys-MacBook-Pro src]$ ./als_local.py
+Loading data...
+#users: 19519
+#movies: 10
+R.shape: (19519, 10)
+Factorizing...
+Nf = 2
+Number of nonzero: 20352
+./als_local.py:93: RuntimeWarning: divide by zero encountered in double_scalars
+  print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
+Iteration #1: 0.05005310699982546(%inf)
+Iteration #2: 0.019728308404359327(%39.41475282329251)
+Iteration #3: 0.012815514368680904(%64.96002650611992)
+Iteration #4: 0.010353187954527766(%80.78636297134763)
+Iteration #5: 0.009220383785604217(%89.05840235974719)
+Iteration #6: 0.008620017027472393(%93.48870099019982)
+Iteration #7: 0.008264839007186914(%95.8796134722993)
+Iteration #8: 0.008047588204084284(%97.37138493667314)
+Iteration #9: 0.007918412924274636(%98.39485723506468)
+Iteration #10: 0.007850869585456709(%99.14700913599913)
+Iteration #11: 0.007828927770525072(%99.72051739373835)
+Iteration #12: 0.00784120537113181(%100.15682352637052)
+Iteration #13: 0.007878895282980483(%100.48066477110052)
+Iteration #14: 0.007935022417708847(%100.71237315273889)
+^CIteration #15: Traceback (most recent call last):
+  File "./als_local.py", line 125, in <module>
+    als_fit(R)
+  File "./als_local.py", line 80, in als_fit
+    lU[i,:] = np.matmul(np.linalg.inv(matrix),vector)
+  File "/usr/local/lib/python3.6/site-packages/numpy/linalg/linalg.py", line 521, in inv
+    a, wrap = _makearray(a)
+  File "/usr/local/lib/python3.6/site-packages/numpy/linalg/linalg.py", line 106, in _makearray
+    new = asarray(a)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./als_local.py", line 133, in <module>
+    save(tempU, "../Model/user.txt")
+  File "/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/save_model.py", line 19, in save
+    for i in range(len(array)):
+TypeError: object of type 'int' has no len()
+[LeLe@Jeremys-MacBook-Pro src]$ spark-submit --master local  als_spark.py
+#users: 19519
+#movies: 10
+Constructing Sparse_Column...
+Success!
+
+Constructing Sparse_Row...
+Success!
+
+Broadcasting...
+Broadcast success!
+
+#users: 19519
+#movies: 10
+nonzero: 20352
+Iteration #1: 1
+/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py:165: RuntimeWarning: divide by zero encountered in double_scalars
+  print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
+0.046052899294677416(%inf)
+Iteration #2: 1
+0.01755984865438156(%38.129735420178086)
+Iteration #3: 1
+0.013679429676949144(%77.90175158221443)
+Iteration #4: 1
+0.012137041706677463(%88.72476406768098)
+Iteration #5: 1
+0.011423998255527562(%94.12506384683836)
+Iteration #6: 1
+0.01104901726594216(%96.71760288125074)
+Iteration #7: 1
+0.010850066097848922(%98.19937680153247)
+Iteration #8: 1
+0.01075531340079548(%99.12670857302679)
+Iteration #9: 1                                                                            
+0.01072710641954436(%99.73773910438504)
+Iteration #10: 1
+0.010743498534993613(%100.15281022493994)
+Iteration #11: 1
+0.010790699674846537(%100.439346081718)
+Iteration #12: 1
+0.01085953587881427(%100.63792159954366)
+Iteration #13: 1
+0.010943620221671644(%100.77429039137311)
+Iteration #14: 1
+0.011038335953025884(%100.8654881057246)
+Iteration #15: 1
+0.011140236272954978(%100.92314928955537)
+Iteration #16: 1
+
+[Stage 31:=================>                                       (3 + 1) / 10]^CTraceback (most recent call last):
+  File "/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/als_spark.py", line 157, in <module>
+    U = U.collect()
+  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/rdd.py", line 809, in collect
+  File "/usr/local/spark/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 1131, in __call__
+  File "/usr/local/spark/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 883, in send_command
+  File "/usr/local/spark/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 1028, in send_command
+  File "/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 237, in signal_handler
+KeyboardInterrupt
+[LeLe@Jeremys-MacBook-Pro src]$ 

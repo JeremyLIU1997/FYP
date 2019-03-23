@@ -97,7 +97,7 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 if __name__ == '__main__':
 	
 	# adjustable parameter
-	input = "../Data/netflix_data/my_data_30_sorted.txt"
+	input = "../Data/netflix_data/my_data_10_sorted.txt"
 	Nf = 2
 	N_iter = 5000
 	#========================================================

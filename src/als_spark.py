@@ -39,7 +39,7 @@ spark = 0
 def init():
 	global sc
 	sc = SparkContext()
-	sc.setLogLevel("ALL")
+	# sc.setLogLevel("ALL")
 	sc.addPyFile("/Users/LeLe/Documents/Sem7/FYP/code/NMF/src/load.py")
 	spark = SparkSession(sc)
 	# clear model from last time
@@ -76,13 +76,15 @@ def update_U(row):
 
 	lam = 0.06
 	lamI = np.identity(Nf) * lam
-
 	vector = np.matmul(Mm.T, extract_from_sparse(R_sparse_row_, [row_index], option = "row")[:,movies].T)
 	matrix = np.matmul(Mm.T,Mm) + row_nonzero_count_[row_index] * lamI
 	return np.append(np.matmul(np.linalg.inv(matrix),vector),row_index)
 
 def euclidean_exclude_zero(a,b):
 	err = 0
+	if (a.shape != b.shape):
+		print("Shape incompatible. Exit.")
+		exit(1)
 	for i in range(len(a)):
 		for j in range(len(a[i])):
 			if (a[i][j] == 0 or b[i][j] == 0):
@@ -98,8 +100,10 @@ init()
 Nf = 2
 N_iter = 100
 
-input = "/Users/LeLe/Documents/Sem7/FYP/code/NMF/Data/netflix_data/my_data_30_sorted.txt"
+input = "/Users/LeLe/Documents/Sem7/FYP/code/NMF/Data/netflix_data/my_data_10_sorted.txt"
 R_sparse_column, R_sparse_row = load_as_sparse(input)
+
+# calculate cardinalities
 row_nonzero_count = column_nonzero_count = []
 for i in range(len(R_sparse_column[1])):
 	column_nonzero_count.append(len(R_sparse_column[1][i]))
@@ -130,31 +134,10 @@ print("Broadcast success!\n")
 
 R_dense = load(input)
 no_nonzero = np.count_nonzero(R_dense)
+print("nonzero: " + str(no_nonzero))
 last_err = 0
 current_err = 0
 
-print(np.array(U).shape)
-M = sc.broadcast(np.array(M))
-for i in range(N_iter):
-	print("Iteration #" + str(i + 1) + ": ", end = "")
-	U = sc.parallelize(U, numSlices=2000)
-	U = U.map(update_U)
-	U = U.collect()
-
-exit(0)
-
-U = sc.broadcast(np.array(U))
-# print("1")
-for i in range(N_iter):
-	print("Iteration #" + str(i + 1) + ": ", end = "")
-	M = sc.parallelize(M).cache()
-	M = M.map(update_M).cache()
-	M = M.collect().cache()
-
-	
-
-
-exit(0)
 for i in range(N_iter):
 	print("Iteration #" + str(i + 1) + ": ", end = "")
 	U = sc.broadcast(np.array(U))
@@ -167,7 +150,7 @@ for i in range(N_iter):
 	# print("4")
 	M = sc.broadcast(np.array(M))
 	# print("5")
-	U = sc.parallelize(U.value)
+	U = sc.parallelize(U.value, numSlices = 100)
 	# print("6")
 	U = U.map(update_U).cache()
 	# print("7")

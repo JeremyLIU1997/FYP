@@ -3,9 +3,10 @@
 export PS1="\[\e[1;33m\][\u@\h \W]\$\[\e[0m\] "
 export PYSPARK_PYTHON=/usr/bin/python3
 export PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+export LOG_PATH=/var/log/hadoop-yarn/apps/hadoop/logs
 export GREP_OPTIONS='--color=always'
 export GREP_COLOR='1;35;40'
-
+# hdfs dfs -copyToLocal $LOG_PATH ../
 # alias
 alias lls="ls -alhF"
 alias so="open -a \"Sublime Text\""

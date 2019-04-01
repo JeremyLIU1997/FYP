@@ -52,25 +52,22 @@ def update_M(col):
 	R_sparse_column_ = R_sparse_column.value
 	column_nonzero_count_ = column_nonzero_count.value
 	U_ = U.value
-	U_ = U_[:,0:len(U_[0]) - 1]
-	col_index = int(col[-1])
+	col_index = int(col)
 	users = R_sparse_column_[1][col_index]
 	Um = U_[users,:]
 
 	lam = 0.06
 	lamI = np.identity(Nf) * lam
-
 	vector = np.matmul(Um.T, extract_from_sparse(R_sparse_column_, [col_index], option = "col")[users])
 	matrix = np.matmul(Um.T,Um) + column_nonzero_count_[col_index] * lamI
-	return np.append(np.matmul(np.linalg.inv(matrix),vector),col_index)
+	return np.matmul(np.linalg.inv(matrix),vector)
 
 def update_U(row):
 	# gather broadcast variables
 	R_sparse_row_ = R_sparse_row.value
 	row_nonzero_count_ = row_nonzero_count.value
 	M_ = M.value
-	M_ = M_[:,0:len(M_[0])-1]
-	row_index = int(row[-1])
+	row_index = int(row)
 	movies = R_sparse_row_[1][row_index]
 	Mm = M_[movies,:]
 
@@ -78,7 +75,7 @@ def update_U(row):
 	lamI = np.identity(Nf) * lam
 	vector = np.matmul(Mm.T, extract_from_sparse(R_sparse_row_, [row_index], option = "row")[:,movies].T)
 	matrix = np.matmul(Mm.T,Mm) + row_nonzero_count_[row_index] * lamI
-	return np.append(np.matmul(np.linalg.inv(matrix),vector),row_index)
+	return np.matmul(np.linalg.inv(matrix),vector)
 
 def euclidean_exclude_zero(a,b):
 	err = 0
@@ -97,12 +94,13 @@ def euclidean_exclude_zero(a,b):
 init()
 
 # adjustable parameters
-Nf = 2
+Nf = 5
 N_iter = 100
 
 input = "/Users/LeLe/Documents/Sem7/FYP/code/NMF/Data/netflix_data/my_data_10_sorted.txt"
 R_sparse_column, R_sparse_row = load_as_sparse(input)
-
+R_height = R_sparse_row[0][0]
+R_width = R_sparse_row[0][1]
 # calculate cardinalities
 row_nonzero_count = column_nonzero_count = []
 for i in range(len(R_sparse_column[1])):
@@ -112,16 +110,12 @@ for i in range(len(R_sparse_row[1])):
 
 # initialize U and M, and append line number to it for
 # identification during update process in workers
-U = np.random.rand(R_sparse_row[0][0], Nf + 1).astype(float)
-M = np.random.rand(Nf + 1, R_sparse_row[0][1]).astype(float)
+U = np.random.rand(R_sparse_row[0][0], Nf).astype(float)
+M = np.random.rand(Nf, R_sparse_row[0][1]).astype(float)
 # initialize first row of M with the average rating of the movie
 # other entries a small random number
 for i in range(len(R_sparse_column[2])):
 	M[0,i] = sum(R_sparse_column[2][i]) / len(R_sparse_column[2][i])
-for i in range(len(U)):
-	U[i][-1] = i
-for i in range(M.shape[1]):
-	M[-1][i] = i
 M = M.T # store column as rows, easily for parallelization
 
 # broadcast data to workers
@@ -138,36 +132,35 @@ print("nonzero: " + str(no_nonzero))
 last_err = 0
 current_err = 0
 
+
 for i in range(N_iter):
 	print("Iteration #" + str(i + 1) + ": ", end = "")
 	U = sc.broadcast(np.array(U))
-	# print("1")
-	M = sc.parallelize(M)
-	# print("2")
-	M = M.map(update_M).cache()
-	# print("3")
-	M = M.collect()
-	# print("4")
-	M = sc.broadcast(np.array(M))
-	# print("5")
-	U = sc.parallelize(U.value, numSlices = 100)
-	# print("6")
-	U = U.map(update_U).cache()
-	# print("7")
-	U = U.collect()
-	# print("8")
+
+	dummy_M = np.zeros(R_width)
+	for i in range(len(dummy_M)):
+		dummy_M[i] = i
+	dummy_M = sc.parallelize(dummy_M)
+	dummy_M = dummy_M.map(update_M).cache()
+
+	M = dummy_M.collect()
+	M = sc.broadcast(np.array(M).reshape((R_width,Nf)))
+	
+	dummy_U = np.zeros(R_height)
+	for i in range(len(dummy_U)):
+		dummy_U[i] = i
+	dummy_U = sc.parallelize(dummy_U, numSlices = 1000)
+	dummy_U = dummy_U.map(update_U).cache()
+
+	U = dummy_U.collect()
 	M = M.value
-	# print("9")
-	U = np.array(U)
+	U = np.array(U).reshape((R_height,Nf))
 	M = np.array(M)
 	last_err = current_err
-	current_err = euclidean_exclude_zero(R_dense,np.matmul(U[:,0:len(U[0])-1],M[:,0:len(M[0])-1].T)) / no_nonzero
+	current_err = euclidean_exclude_zero(R_dense,np.matmul(U,M.T)) / no_nonzero
 	print(str(current_err) + "(%" + str(100 * current_err/last_err) + ")")
 	"""
 	if current_err > last_err:
 		print("Learning complete.")
 		break
 	"""
-
-
-print(M.take(1))

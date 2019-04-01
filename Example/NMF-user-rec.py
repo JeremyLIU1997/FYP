@@ -12,14 +12,15 @@ import matplotlib
 fontP = matplotlib.font_manager.FontProperties(fname='/Library/Fonts/Songti.ttc') 
 #fontP.set_family('SimHei')
 
+
 item = [
-    '希特勒回来了', '死侍', '房间', '龙虾', '大空头',
-    '极盗者', '裁缝', '八恶人', '实习生', '间谍之桥',
+    'M1', 'M2', 'M3', 'M4', 'M5',
+    'M6', 'M7', 'M8', 'M9', 'M10',
 ]
 
-user = ['五柳君', '帕格尼六', '木村静香', 'WTF', 'airyyouth',
-        '橙子c', '秋月白', 'clavin_kong', 'olit', 'You_某人',
-        '凛冬将至', 'Rusty', '噢！你看！', 'Aron', 'ErDong Chen']
+user = ['U1', 'U2', 'U3', 'U4', 'U5',
+        'U6', 'U7', 'U8', 'U9', 'U10',
+        'U11', 'U12', 'U13', 'U14', 'U15']
     
 # Rm*n m = item n = user
 RATE_MATRIX = np.array(
@@ -49,7 +50,7 @@ plt1 = plt
 plt1.plot(user_dis[:, 0], user_dis[:, 1], 'ro')
 plt1.xlim((-1, 3))
 plt1.ylim((-1, 3))
-plt1.title(u'the distribution of user (NMF)')#设置图的标题
+plt1.title(u'User Distribution')#设置图的标题
 
 zipuser = zip(user, user_dis)#把用户名称标题和用户的坐标联系在一起
 for user in zipuser:

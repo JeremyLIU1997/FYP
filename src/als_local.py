@@ -44,8 +44,8 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 	M[0,:] = np.sum(R,axis=0) / np.count_nonzero(mat,axis=0)
 	N_rows = mat.shape[0]
 	N_cols = mat.shape[1]
-	lU = np.random.rand(mat.shape[0],Nf).astype(float)
-	lM = np.random.rand(Nf,mat.shape[1]).astype(float)
+	# lU = np.random.rand(mat.shape[0],Nf).astype(float)
+	# lM = np.random.rand(Nf,mat.shape[1]).astype(float)
 	lam = 0.06
 	lamI = np.identity(Nf) * lam
 	current_err = 0
@@ -62,11 +62,11 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 			vector = np.matmul(Um,mat[users,i])
 			matrix = np.matmul(Um,Um.T) + np.count_nonzero(mat[:,i]) * lamI
 			try:
-				lM[:,i] = np.matmul(np.linalg.inv(matrix),vector)
+				M[:,i] = np.matmul(np.linalg.inv(matrix),vector)
 			except Exception:
 				print(matrix)
 				exit(0)
-		M = lM
+		# M = lM
 		tempM = M
 		# update each row in U
 		for i in range(N_rows):
@@ -77,11 +77,11 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 			vector = np.matmul(Mm,mat[i,movies]) # Mm is of dimension (Nf, number_of_movie)
 			matrix = np.matmul(Mm,Mm.T) + np.count_nonzero(mat[i,:]) * lamI
 			try:
-				lU[i,:] = np.matmul(np.linalg.inv(matrix),vector)
+				U[i,:] = np.matmul(np.linalg.inv(matrix),vector)
 			except Exception:
 				print(matrix)
 				exit(0)
-		U = lU
+		# U = lU
 		tempU = U
 
 		last_err = current_err
@@ -97,7 +97,7 @@ def als_fit(mat): # mat is the rating matrix, mat = U * M
 if __name__ == '__main__':
 	
 	# adjustable parameter
-	input = "../Data/netflix_data/my_data_10_sorted.txt"
+	input = "../Data/netflix_data/my_data_30_sorted.txt"
 	Nf = 2
 	N_iter = 5000
 	#========================================================
